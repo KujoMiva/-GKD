@@ -1,0 +1,21 @@
+{
+  "name": "kujomiva",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/register": "^7.6.0",
+    "babel-eslint": "^10.0.1",
+    "body-parser": "^1.19.0",
+    "chokidar": "^3.0.2",
+    "eslint": "^6.3.0",
+    "eslint-plugin-vue": "^5.0.0"
+  }
+}
