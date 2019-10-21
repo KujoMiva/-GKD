@@ -1,19 +1,32 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/open/index"
   ],
   "window": {
+    "navigationBarBackgroundColor": "#FFE454",
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "uni-app",
-    "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
+    "navigationBarTitleText": "GKD",
+    "navigationStyle": "default",
+    "backgroundColor": "#FFE454",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": false,
+    "onReachBottomDistance": 50,
+    "backgroundColorTop": "#FFFFFF",
+    "backgroundColorBottom": "#FFFFFF",
+    "titleImage": "",
+    "transparentTitle": "none",
+    "titlePenetrate": "NO",
+    "pageOrientation": "portrait",
+    "animationType": "pop-in",
+    "animationDuration": "300",
+    "scrollIndicator": "none"
   },
   "networkTimeout": {
     "request": 30000,
     "uploadFile": 7200000,
     "downloadFile": 7200000
   },
-  "debug": true,
+  "debug": false,
   "nvueCompiler": "uni-app",
   "renderer": "auto",
   "splashscreen": {
@@ -21,6 +34,6 @@
     "autoclose": false
   },
   "appname": "计科艺GKD",
-  "compilerVersion": "2.3.3",
+  "compilerVersion": "2.3.6",
   "usingComponents": {}
 }

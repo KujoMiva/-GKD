@@ -1,16 +1,43 @@
 {
 	"pages": [
 		{
-			"path": "pages/index/index",
+			"name": "开屏页面",
+			"path": "pages/open/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationStyle": "custom"
 			}
+		},
+		{
+			"path": "pages/tabBar/home/home",
+			"style": {}
 		}
 	],
 	"globalStyle": {
+		"navigationBarBackgroundColor": "#FFE454",
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarTitleText": "GKD",
+		"navigationStyle": "default",
+		"backgroundColor": "#FFE454",
+		"backgroundTextStyle": "dark",
+		"enablePullDownRefresh": false,
+		"onReachBottomDistance": 50,
+		"backgroundColorTop": "#FFFFFF",
+		"backgroundColorBottom": "#FFFFFF",
+		"titleImage": "",
+		"transparentTitle": "none",
+		"titlePenetrate": "NO",
+		"pageOrientation": "portrait",
+		"animationType": "pop-in",
+		"animationDuration": "300",
+		"app-plus": {
+			"scrollIndicator": "none"
+		},
+		"h5": {},
+		"mp-alipay": {},
+		"mp-weixin": {},
+		"mp-baidu": {},
+		"mp-toutiao": {},
+		"mp-qq": {},
+		"usingComponents": {}
 	}
 }
