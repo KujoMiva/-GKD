@@ -47,7 +47,7 @@ export default {
     routerLink() {
       if (!this.disabled) return
       this.$navigateTo({
-        url: '/pages/page-group-search/index',
+        url: this.$libRouter['搜索'],
         animationType: 'fade-in'
       })
     }
@@ -103,26 +103,26 @@ export default {
   // #ifndef MP
   &.act {
     .item-btn-search {
-      animation: item-btn 0.2s 0s linear forwards;
+      animation: item-btn 0.5s 0.5s linear forwards;
     }
     .group-search {
-      animation: input-width 0.2s 0s linear forwards;
+      animation: input-width 0.5s 0s linear forwards;
     }
     .iconfont::before {
-      animation: icon-left 0.2s 0s linear forwards;
+      animation: icon-left 0.5s 0.2s linear forwards;
     }
   }
   // #endif
   // #ifdef MP
   &.act {
     .item-btn-search {
-      animation: item-btn 0.2s .3s linear forwards;
+      animation: item-btn 0.5s .5s linear forwards;
     }
     .group-search {
-      animation: input-width 0.2s .3s linear forwards;
+      animation: input-width 0.5s .5s linear forwards;
     }
     .iconfont::before {
-      animation: icon-left 0.2s .3s linear forwards;
+      animation: icon-left 0.5s .5s linear forwards;
     }
   }
   // #endif

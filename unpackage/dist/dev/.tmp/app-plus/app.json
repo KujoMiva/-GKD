@@ -1,10 +1,13 @@
 {
   "pages": [
     "pages/open-advert/index",
-    "pages/tabBar-calssify/index",
+    "pages/tabBar-classify/index",
     "pages/tabBar-dynamic/index",
     "pages/tabBar-home/index",
-    "pages/tabBar-presonal/index"
+    "pages/tabBar-personal/index",
+    "pages/page-systemSetting/index",
+    "pages/page-systemInfo/index",
+    "pages/page-search/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#FFE454",
@@ -38,7 +41,7 @@
         "selectedIconPath": "static/icon/Hat_act.png"
       },
       {
-        "pagePath": "pages/tabBar-calssify/index",
+        "pagePath": "pages/tabBar-classify/index",
         "text": "分类",
         "iconPath": "static/icon/Shirt.png",
         "selectedIconPath": "static/icon/Shirt_act.png"
@@ -73,6 +76,7 @@
   "compilerVersion": "2.3.6",
   "usingComponents": {
     "miva-image": "/components/miva-item/item-image",
-    "miva-avatar": "/components/miva-item/item-avatar"
+    "miva-avatar": "/components/miva-item/item-avatar",
+    "miva-nickname": "/components/miva-item/item-nickname"
   }
 }

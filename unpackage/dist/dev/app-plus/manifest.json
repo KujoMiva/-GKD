@@ -116,7 +116,7 @@
           "selectedIconPath": "static/icon/Hat_act.png"
         },
         {
-          "pagePath": "pages/tabBar-calssify/index",
+          "pagePath": "pages/tabBar-classify/index",
           "text": "分类",
           "iconPath": "static/icon/Shirt.png",
           "selectedIconPath": "static/icon/Shirt_act.png"

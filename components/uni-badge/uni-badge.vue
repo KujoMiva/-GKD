@@ -78,7 +78,8 @@ export default {
 
 		&-warning {
 			color: $uni-text-color-inverse;
-			background-color: $uni-color-warning;
+			// background-color: $uni-color-warning;
+			background-color: $miva-color-global;
 
 			&.uni-badge-inverted {
 				color: $uni-color-warning;

@@ -41,6 +41,7 @@ const actions = {
       key: 'app-setting',
       data,
       success() {
+        console.log('设置储存成功')
         commit('SAVE_SETTING', data)
       },
       fail() {

@@ -22,7 +22,7 @@ export default {
           arr.push({
             id: i,
             title: '默认标题默认标题默认标题默认标题默认标题默认标题',
-            cover: 'http://cq-photo.oss-cn-huhehaote.aliyuncs.com/uploads/20190924/080504d289846ef803cc77026e850a60.png',
+            cover: '/static/default_1.jpg',
             star: 100 + i
           })
         }

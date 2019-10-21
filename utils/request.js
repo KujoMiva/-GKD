@@ -3,8 +3,8 @@ import store from '@/store'
 
 // 设置全局配置, 只能配置静态数据
 request.prototype.setConfig({
-  // url: 'http://192.168.2.102:7001'
-  url: 'http://10.11.16.151:7001'
+  url: 'http://192.168.2.102:7001'
+  // url: 'http://10.11.16.151:7001'
 })
 
 // 全局拦截器

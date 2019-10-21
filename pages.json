@@ -10,7 +10,7 @@
 			}
 		},
 		{
-			"path": "pages/tabBar-calssify/index",
+			"path": "pages/tabBar-classify/index",
 			"style": {}
 		},
 		{
@@ -22,8 +22,26 @@
 			"style": {}
 		},
 		{
-			"path": "pages/tabBar-presonal/index",
+			"path": "pages/tabBar-personal/index",
 			"style": {}
+		},
+		{
+			"path": "pages/page-systemSetting/index",
+			"style": {
+				"navigationBarTitleText": "系统设置"
+			}
+		},
+		{
+			"path": "pages/page-systemInfo/index",
+			"style": {
+				"navigationBarTitleText": "系统信息"
+			}
+		},
+		{
+			"path": "pages/page-search/index",
+			"style": {
+				"navigationBarTitleText": "想要找点什么?"
+			}
 		}
 	],
 	"globalStyle": {
@@ -67,7 +85,7 @@
 				"selectedIconPath": "static/icon/Hat_act.png"
 			},
 			{
-				"pagePath": "pages/tabBar-calssify/index",
+				"pagePath": "pages/tabBar-classify/index",
 				"text": "分类",
 				"iconPath": "static/icon/Shirt.png",
 				"selectedIconPath": "static/icon/Shirt_act.png"
