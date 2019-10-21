@@ -1061,31 +1061,43 @@ function gz$gwx_1(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_1)return __WXML_GLOBAL__.ops_cached.$gwx_1
 __WXML_GLOBAL__.ops_cached.$gwx_1=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'开屏页面'])
+Z([3,'__e'])
+Z([3,'container-components-item-header data-v-5d63fe6c'])
+Z([[4],[[5],[[4],[[5],[[5],[1,'tap']],[[4],[[5],[[4],[[5],[[5],[1,'routerLink']],[[4],[[5],[1,'$event']]]]]]]]]]])
+Z([[7],[3,'src']])
+Z([[2,'+'],[[2,'+'],[[2,'+'],[1,'width:'],[[2,'+'],[[7],[3,'size']],[1,'rpx']]],[1,';']],[[2,'+'],[[2,'+'],[1,'height:'],[[2,'+'],[[7],[3,'size']],[1,'rpx']]],[1,';']]])
+Z([3,'__l'])
+Z([[7],[3,'checkedAvatar']])
+Z([3,'item-avatar item-avatar-round data-v-5d63fe6c'])
+Z([[2,'||'],[[7],[3,'src']],[1,'https://img-cdn-qiniu.dcloud.net.cn/uniapp/doc/github.svg']])
+Z([3,'1'])
 })(__WXML_GLOBAL__.ops_cached.$gwx_1);return __WXML_GLOBAL__.ops_cached.$gwx_1
 }
 function gz$gwx_2(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_2)return __WXML_GLOBAL__.ops_cached.$gwx_2
 __WXML_GLOBAL__.ops_cached.$gwx_2=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'开屏页面'])
+Z([[7],[3,'isRouterShow']])
+Z([3,'__e'])
+Z(z[1])
+Z(z[1])
+Z([[4],[[5],[[5],[[5],[[5],[1,'miva-image']],[[7],[3,'className']]],[[2,'&&'],[[7],[3,'error']],[1,'miva-image-error']]],[[2,'&&'],[[7],[3,'load']],[1,'miva-image-load']]]])
+Z([[4],[[5],[[5],[[5],[[4],[[5],[[5],[1,'error']],[[4],[[5],[[4],[[5],[[5],[1,'errorHandler']],[[4],[[5],[1,'$event']]]]]]]]]],[[4],[[5],[[5],[1,'load']],[[4],[[5],[[4],[[5],[[5],[1,'loadHandler']],[[4],[[5],[1,'$event']]]]]]]]]],[[4],[[5],[[5],[1,'tap']],[[4],[[5],[[4],[[5],[[5],[1,'clickHandler']],[[4],[[5],[1,'$event']]]]]]]]]]])
+Z([[7],[3,'lazyLoad']])
+Z([[7],[3,'mode']])
+Z([[7],[3,'useImage']])
+Z(z[4])
 })(__WXML_GLOBAL__.ops_cached.$gwx_2);return __WXML_GLOBAL__.ops_cached.$gwx_2
-}
-function gz$gwx_3(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_3)return __WXML_GLOBAL__.ops_cached.$gwx_3
-__WXML_GLOBAL__.ops_cached.$gwx_3=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-})(__WXML_GLOBAL__.ops_cached.$gwx_3);return __WXML_GLOBAL__.ops_cached.$gwx_3
 }
 __WXML_GLOBAL__.ops_set.$gwx=z;
 __WXML_GLOBAL__.ops_init.$gwx=true;
 var nv_require=function(){var nnm={};var nom={};return function(n){return function(){if(!nnm[n]) return undefined;try{if(!nom[n])nom[n]=nnm[n]();return nom[n];}catch(e){e.message=e.message.replace(/nv_/g,'');var tmp = e.stack.substring(0,e.stack.lastIndexOf(n));e.stack = tmp.substring(0,tmp.lastIndexOf('\n'));e.stack = e.stack.replace(/\snv_/g,' ');e.stack = $gstack(e.stack);e.stack += '\n    at ' + n.substring(2);console.error(e);}
 }}}()
-var x=['./pages/open/index.wxml','./pages/open/index/index.wxml','./utils/filters/index/index.wxml'];d_[x[0]]={}
+var x=['./components/miva-item/item-avatar.wxml','./components/miva-item/item-image.wxml'];d_[x[0]]={}
 var m0=function(e,s,r,gg){
 var z=gz$gwx_1()
-var oB=_n('view')
-var xC=_oz(z,0,e,s,gg)
+var oB=_mz(z,'view',['bindtap',0,'class',1,'data-event-opts',1,'id',2,'style',3],[],e,s,gg)
+var xC=_mz(z,'miva-image',['bind:__l',5,'checked',1,'class',2,'src',3,'vueId',4],[],e,s,gg)
 _(oB,xC)
 _(r,oB)
 return r
@@ -1094,21 +1106,21 @@ e_[x[0]]={f:m0,j:[],i:[],ti:[],ic:[]}
 d_[x[1]]={}
 var m1=function(e,s,r,gg){
 var z=gz$gwx_2()
-var fE=_n('view')
-var cF=_oz(z,0,e,s,gg)
-_(fE,cF)
+var fE=_v()
 _(r,fE)
+if(_oz(z,0,e,s,gg)){fE.wxVkey=1
+var cF=_mz(z,'image',['binderror',1,'bindload',1,'bindtap',2,'class',3,'data-event-opts',4,'lazyLoad',5,'mode',6,'src',7],[],e,s,gg)
+_(fE,cF)
+}
+else{fE.wxVkey=2
+var hG=_n('image')
+_rz(z,hG,'class',9,e,s,gg)
+_(fE,hG)
+}
+fE.wxXCkey=1
 return r
 }
 e_[x[1]]={f:m1,j:[],i:[],ti:[],ic:[]}
-d_[x[2]]={}
-var m2=function(e,s,r,gg){
-var z=gz$gwx_3()
-var oH=_n('view')
-_(r,oH)
-return r
-}
-e_[x[2]]={f:m2,j:[],i:[],ti:[],ic:[]}
 if(path&&e_[path]){
 window.__wxml_comp_version__=0.02
 return function(env,dd,global){$gwxc=0;var root={"tag":"wx-page"};root.children=[]
@@ -1233,14 +1245,26 @@ setCssToHead([])();setCssToHead([[2,0]],undefined,{path:"./app.wxss"})();
 __wxAppCode__['app.wxss']=setCssToHead([[2,0]],undefined,{path:"./app.wxss"});    
 __wxAppCode__['app.wxml']=$gwx('./app.wxml');
 
-__wxAppCode__['pages/open/index.wxss']=undefined;    
-__wxAppCode__['pages/open/index.wxml']=$gwx('./pages/open/index.wxml');
+__wxAppCode__['components/miva-item/item-avatar.wxss']=setCssToHead(["@charset \x22UTF-8\x22;\n.",[1],"container-components-item-header.",[1],"data-v-5d63fe6c { width: ",[0,80],"; height: ",[0,80],"; position: relative; }\n.",[1],"container-components-item-header .",[1],"item-avatar.",[1],"data-v-5d63fe6c { width: 100%; height: 100%; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }\n.",[1],"container-components-item-header .",[1],"item-avatar-round.",[1],"data-v-5d63fe6c { border-radius: 50%; overflow: hidden; }\n",],undefined,{path:"./components/miva-item/item-avatar.wxss"});    
+__wxAppCode__['components/miva-item/item-avatar.wxml']=$gwx('./components/miva-item/item-avatar.wxml');
 
-__wxAppCode__['pages/open/index/index.wxss']=setCssToHead([".",[1],"example {-webkit-box-orient: vertical;-webkit-box-direction: normal;-webkit-flex-direction: column;-ms-flex-direction: column;flex-direction: column;}\n.",[1],"text {line-height: 80px;font-size: 32px;color: #333;}\n.",[1],"item {height: 80px;width: 690px;margin: 30px;background-color: #f8f8f8;border-width: 1px;border-color: #eee;border-radius: 10px;-webkit-box-align: center;-webkit-align-items: center;-ms-flex-align: center;align-items: center;}\n",],undefined,{path:"./pages/open/index/index.wxss"});    
-__wxAppCode__['pages/open/index/index.wxml']=$gwx('./pages/open/index/index.wxml');
+__wxAppCode__['components/miva-item/item-image.wxss']=setCssToHead(["@charset \x22UTF-8\x22;\n@-webkit-keyframes miva-rotate { 0% { -webkit-transform: translate(-50%, -50%) rotate(0deg); transform: translate(-50%, -50%) rotate(0deg); }\n100% { -webkit-transform: translate(-50%, -50%) rotate(360deg); transform: translate(-50%, -50%) rotate(360deg); }\n}@keyframes miva-rotate { 0% { -webkit-transform: translate(-50%, -50%) rotate(0deg); transform: translate(-50%, -50%) rotate(0deg); }\n100% { -webkit-transform: translate(-50%, -50%) rotate(360deg); transform: translate(-50%, -50%) rotate(360deg); }\n}.",[1],"miva-image-default { width: inherit; height: inherit; }\n.",[1],"miva-image { position: relative; color: #969799; }\n.",[1],"miva-image .",[1],"_div, .",[1],"miva-image .",[1],"_img { position: relative; z-index: 2; }\n.",[1],"miva-image-load { background-color: #f8f8f8; }\n.",[1],"miva-image-load::before { font-family: iconfont; content: \x22\\E65D\x22; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); z-index: 1; font-size: ",[0,60],"; -webkit-animation: miva-rotate 0.8s linear infinite; animation: miva-rotate 0.8s linear infinite; }\n.",[1],"miva-image-load::after { content: \x22\\52A0\\8F7D\\4E2D\x22; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, 100%); -ms-transform: translate(-50%, 100%); transform: translate(-50%, 100%); z-index: 1; font-size: ",[0,24],"; }\n.",[1],"miva-image-error { background-color: #f8f8f8; }\n.",[1],"miva-image-error::before { font-family: iconfont; content: \x22\\E61B\x22; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); z-index: 1; font-size: ",[0,60],"; }\n.",[1],"miva-image-error::after { content: \x22\\52A0\\8F7D\\5931\\8D25\x22; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, 100%); -ms-transform: translate(-50%, 100%); transform: translate(-50%, 100%); z-index: 1; font-size: ",[0,24],"; }\n",],undefined,{path:"./components/miva-item/item-image.wxss"});    
+__wxAppCode__['components/miva-item/item-image.wxml']=$gwx('./components/miva-item/item-image.wxml');
 
-__wxAppCode__['utils/filters/index/index.wxss']=undefined;    
-__wxAppCode__['utils/filters/index/index.wxml']=$gwx('./utils/filters/index/index.wxml');
+__wxAppCode__['pages/open-advert/index.wxss']=undefined;    
+__wxAppCode__['pages/open-advert/index.wxml']=$gwx('./pages/open-advert/index.wxml');
+
+__wxAppCode__['pages/tabBar-calssify/index.wxss']=undefined;    
+__wxAppCode__['pages/tabBar-calssify/index.wxml']=$gwx('./pages/tabBar-calssify/index.wxml');
+
+__wxAppCode__['pages/tabBar-dynamic/index.wxss']=undefined;    
+__wxAppCode__['pages/tabBar-dynamic/index.wxml']=$gwx('./pages/tabBar-dynamic/index.wxml');
+
+__wxAppCode__['pages/tabBar-home/index.wxss']=undefined;    
+__wxAppCode__['pages/tabBar-home/index.wxml']=$gwx('./pages/tabBar-home/index.wxml');
+
+__wxAppCode__['pages/tabBar-presonal/index.wxss']=undefined;    
+__wxAppCode__['pages/tabBar-presonal/index.wxml']=$gwx('./pages/tabBar-presonal/index.wxml');
 
 ;var __pageFrameEndTime__ = Date.now();
 (function() {

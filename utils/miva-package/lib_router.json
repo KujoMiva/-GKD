@@ -1,3 +1,7 @@
 {
-	"开屏页面": "pages/open/index/index"
+	"开屏页面": "pages/open-advert/index",
+	"首页": "pages/tabBar-home/index",
+	"分类": "pages/tabBar-classify/index",
+	"动态": "pages/tabBar-dynamic/index",
+	"个人中心": "pages/tabBar-personal/index"
 }

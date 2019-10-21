@@ -35,7 +35,6 @@
     },
     "popGesture": "close",
     "launchwebview": {
-      "render": "always",
       "id": "1",
       "kernel": "WKWebview",
       "uni-app": "auto"
@@ -89,6 +88,12 @@
       }
     },
     "allowsInlineMediaPlayback": true,
+    "safearea": {
+      "background": "#F8F8F8",
+      "bottom": {
+        "offset": "auto"
+      }
+    },
     "uni-app": {
       "compilerVersion": "2.3.6",
       "control": "v8",
@@ -97,6 +102,39 @@
       "nvue": {
         "flex-direction": "column"
       }
+    },
+    "tabBar": {
+      "color": "#7a7e83",
+      "backgroundColor": "#F8F8F8",
+      "selectedColor": "#FFE454",
+      "borderStyle": "rgba(255,255,255,0.4)",
+      "list": [
+        {
+          "pagePath": "pages/tabBar-home/index",
+          "text": "首页",
+          "iconPath": "static/icon/Hat.png",
+          "selectedIconPath": "static/icon/Hat_act.png"
+        },
+        {
+          "pagePath": "pages/tabBar-calssify/index",
+          "text": "分类",
+          "iconPath": "static/icon/Shirt.png",
+          "selectedIconPath": "static/icon/Shirt_act.png"
+        },
+        {
+          "pagePath": "pages/tabBar-dynamic/index",
+          "text": "动态",
+          "iconPath": "static/icon/Trousers.png",
+          "selectedIconPath": "static/icon/Trousers_act.png"
+        },
+        {
+          "pagePath": "pages/tabBar-personal/index",
+          "text": "我的",
+          "iconPath": "static/icon/Shoe.png",
+          "selectedIconPath": "static/icon/Shoe_act.png"
+        }
+      ],
+      "height": "50px"
     }
   }
 }

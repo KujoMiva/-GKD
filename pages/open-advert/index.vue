@@ -1,5 +1,5 @@
 <template>
-  <view class="container-page-system-setting">
+  <view class="container-page-open-advter">
     <!--  -->
   </view>
 </template>
@@ -9,7 +9,7 @@ export default { }
 </script>
 
 <style lang="scss">
-.container-page-system-setting{
+.container-page-open-advter{
     position: relative;
 }
 </style>

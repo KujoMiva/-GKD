@@ -1,0 +1,23 @@
+{
+    "uniapp-page": {
+        "prefix": "uniPage",
+        "body": [
+            "<template>",
+            "  <view class=\"container-${1:KujoMiva}\">",
+            "    <!--  -->",
+            "  </view>",
+            "</template>",
+            "",
+            "<script>",
+            "export default { }",
+            "</script>",
+            "",
+            "<style lang=\"scss\">",
+            ".container-${1:KujoMiva}{",
+            "    position: relative;",
+            "}",
+            "</style>",
+            ""
+        ]
+    }
+}

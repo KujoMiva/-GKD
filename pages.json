@@ -1,14 +1,28 @@
 {
 	"pages": [
 		{
-			"name": "开屏页面",
-			"path": "pages/open/index",
+			"path": "pages/open-advert/index",
 			"style": {
-				"navigationStyle": "custom"
+				"navigationStyle": "custom",
+				"app-plus": {
+					"animationType": "fade-in"
+				}
 			}
 		},
 		{
-			"path": "pages/tabBar/home/home",
+			"path": "pages/tabBar-calssify/index",
+			"style": {}
+		},
+		{
+			"path": "pages/tabBar-dynamic/index",
+			"style": {}
+		},
+		{
+			"path": "pages/tabBar-home/index",
+			"style": {}
+		},
+		{
+			"path": "pages/tabBar-presonal/index",
 			"style": {}
 		}
 	],
@@ -39,5 +53,37 @@
 		"mp-toutiao": {},
 		"mp-qq": {},
 		"usingComponents": {}
+	},
+	"tabBar": {
+		"color": "#7a7e83",
+		"backgroundColor": "#F8F8F8",
+		"selectedColor": "#FFE454",
+		"borderStyle": "white",
+		"list": [
+			{
+				"pagePath": "pages/tabBar-home/index",
+				"text": "首页",
+				"iconPath": "static/icon/Hat.png",
+				"selectedIconPath": "static/icon/Hat_act.png"
+			},
+			{
+				"pagePath": "pages/tabBar-calssify/index",
+				"text": "分类",
+				"iconPath": "static/icon/Shirt.png",
+				"selectedIconPath": "static/icon/Shirt_act.png"
+			},
+			{
+				"pagePath": "pages/tabBar-dynamic/index",
+				"text": "动态",
+				"iconPath": "static/icon/Trousers.png",
+				"selectedIconPath": "static/icon/Trousers_act.png"
+			},
+			{
+				"pagePath": "pages/tabBar-personal/index",
+				"text": "我的",
+				"iconPath": "static/icon/Shoe.png",
+				"selectedIconPath": "static/icon/Shoe_act.png"
+			}
+		]
 	}
 }
