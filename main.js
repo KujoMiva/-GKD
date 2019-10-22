@@ -4,8 +4,8 @@ import App from './App'
 import store from './store/'
 Vue.prototype.$store = store
 // 注册路由字典
-import libRouter from '@/utils/miva-package/lib_router.json'
-Vue.prototype.$libRouter = libRouter
+// import libRouter from '@/utils/miva-package/lib_router.json'
+// Vue.prototype.$libRouter = libRouter
 // 注册路由拦截器
 import mivaRouter from '@/utils/miva-package/router'
 Vue.use(mivaRouter, store)

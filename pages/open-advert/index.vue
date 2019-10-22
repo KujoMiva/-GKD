@@ -30,7 +30,7 @@ export default {
   methods: {
     routerLink() {
       clearInterval(this.timer)
-      uni.switchTab({ url: this.$libRouter['首页'] })
+      this.$switchTab({ url: this.$libRouter['首页'] }, { comefrom: 'open' })
     }
   }
 }

@@ -42,7 +42,20 @@
 			"style": {
 				"navigationBarTitleText": "想要找点什么?"
 			}
+		},
+		{
+			"path": "pages/page-login/index",
+			"style": {
+				"navigationBarTitleText": "欢迎登录"
+			}
+		},
+		{
+			"path": "pages/page-verifyCode/index",
+			"style": {
+				"navigationBarTitleText": " "
+			}
 		}
+
 	],
 	"globalStyle": {
 		"navigationBarBackgroundColor": "#FFE454",

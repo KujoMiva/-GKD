@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     routerLink(link) {
-      this.$navigateTo({ url: this.$libRouter[link] })
+      this.$navigateTo({ url: this.$libRouter[link] }, { comefrom: 'open' })
     }
   }
 }

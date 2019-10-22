@@ -1,10 +1,54 @@
 {
-	"开屏页面": "/pages/open-advert/index",
-	"首页": "/pages/tabBar-home/index",
-	"分类": "/pages/tabBar-classify/index",
-	"动态": "/pages/tabBar-dynamic/index",
-	"个人中心": "/pages/tabBar-personal/index",
-	"系统设置": "/pages/page-systemSetting/index",
-	"系统信息": "/pages/page-systemInfo/index",
-	"搜索": "/pages/page-search/index"
+	"开屏页面": {
+		"name": "开屏页面",
+		"url": "/pages/open-advert/index",
+		"whiteList": true,
+		"blackList": false
+	},
+	"首页": {
+		"name": "首页",
+		"url": "/pages/tabBar-home/index",
+		"whiteList": true,
+		"blackList": false
+	},
+	"分类": {
+		"name": "分类",
+		"url": "/pages/tabBar-classify/index",
+		"whiteList": true,
+		"blackList": false
+	},
+	"动态": {
+		"name": "动态",
+		"url": "/pages/tabBar-dynamic/index",
+		"whiteList": true,
+		"blackList": false
+	},
+	"个人中心": {
+		"name": "个人中心",
+		"url": "/pages/tabBar-personal/index",
+		"whiteList": true,
+		"blackList": false
+	},
+	"系统设置": {
+		"name": "系统设置",
+		"url": "/pages/page-systemSetting/index",
+		"whiteList": true,
+		"blackList": false
+	},
+	"系统信息": {
+		"name": "系统信息",
+		"url": "/pages/page-systemInfo/index",
+		"whiteList": true,
+		"blackList": false
+	},
+	"登录": {
+		"name": "登录",
+		"url": "/pages/page-login/index",
+		"whiteList": true,
+		"blackList": false
+	},
+	"登录验证码": {
+		"name": "登录验证码",
+		"url": "/pages/page-verifyCode/index"
+	}
 }
