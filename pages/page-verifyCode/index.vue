@@ -114,22 +114,19 @@ export default {
   .item-tip {
     padding: 20rpx 0;
     font-size: 24rpx;
-    color: #eac13a;
+    color: $miva-color-global;
   }
 }
 
 @keyframes miva-shan {
   0% {
-    // opacity: 0;
-    display: none;
+    opacity: 0;
   }
   50% {
-    // opacity: 1;
-    display: inline-block;
+    opacity: 1;
   }
   100% {
-    // opacity: 0;
-    display: none;
+    opacity: 0;
   }
 }
 </style>

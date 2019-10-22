@@ -1,20 +1,37 @@
 <template>
-  <view class="container-page-personal">
+  <view class="container-page-personal" :class="show&&'show-on'">
+    <view class="item-animation" />
     <view class="group-userinfo">
-      <mivaAvatar :user-id="34" :src="$img_1" :size="120" :checked-avatar="34!==undefined" />
+      <mivaAvatar :user-id="34" :src="$img_1" :size="120" :checked-avatar="false" />
       <mivaNickname />
       <!-- 设置按钮 -->
       <view class="item-btn-setting iconfont icon-settings" @click="routerLink('系统设置')" />
     </view>
     <!-- 宫格 -->
-    <uniGrid :column="4" :show-border="false" :highlight="false">
-      <uniGridItem v-for="(temp, index) in topItemList" :key="index">
-        <view style="text-align:center" @click="routerLink(temp.link)">
-          <view class="item-icon iconfont" :class="temp.icon" />
-          <view style=" font-weight: bold;color:#000">{{ temp.title }}</view>
-        </view>
-      </uniGridItem>
-    </uniGrid>
+    <view class="group-grid" :class="show&&'group-uniGrid'">
+      <uniGrid :column="4" :show-border="false" :highlight="false">
+        <uniGridItem v-for="(temp, index) in topItemList" :key="index">
+          <view style="text-align:center" @click="routerLink(temp.link)">
+            <view class="item-icon iconfont" :class="temp.icon" />
+            <view style=" font-weight: bold;color:#000">{{ temp.title }}</view>
+          </view>
+        </uniGridItem>
+      </uniGrid>
+    </view>
+    <view class="group-list" :class="show&&'group-unilist'">
+      <uniList>
+        <uniListItem :show-arrow="false" title="投稿" />
+        <uniListItem :show-arrow="false" title="创作中心" />
+        <uniListItem :show-arrow="false" title="热门活动" />
+      </uniList>
+      <uniList>
+        <uniListItem :show-arrow="false" title="投稿" />
+        <uniListItem :show-arrow="false" title="创作中心" />
+      </uniList>
+      <uniList>
+        <uniListItem :show-arrow="false" title="热门活动" />
+      </uniList>
+    </view>
   </view>
 </template>
 
@@ -24,12 +41,15 @@ import { mapGetters } from 'vuex'
 // items
 import uniGrid from '@/components/uni-grid/uni-grid.vue'
 import uniGridItem from '@/components/uni-grid-item/uni-grid-item.vue'
+import uniList from '@/components/uni-list/uni-list'
+import uniListItem from '@/components/uni-list-item/uni-list-item'
 export default {
-  components: { uniGrid, uniGridItem },
+  components: { uniGrid, uniGridItem, uniList, uniListItem },
   data() {
     return {
+      show: false,
       topItemList: [
-        { title: '消息', icon: 'icon-shoucangtubiao', link: '系统设置' },
+        { title: '消息', icon: 'icon-shoucangtubiao', link: '登录' },
         { title: '好友', icon: 'icon-kafeitubiao', link: '系统设置' },
         { title: '粉丝', icon: 'icon-liuyantubiao', link: '系统设置' },
         { title: '动态', icon: 'icon-labtubiao', link: '系统设置' }
@@ -38,6 +58,17 @@ export default {
   },
   computed: {
     ...mapGetters(['systemInfo'])
+  },
+  onNavigationBarButtonTap(evt) {
+    console.log(evt)
+    this.show = !this.show
+    // #ifdef APP-PLUS
+    var webView = this.$mp.page.$getAppWebview()
+    webView.setTitleNViewButtonBadge({
+      index: 0,
+      text: this.show ? 'on' : 'off'
+    })
+    // #endif
   },
   methods: {
     routerLink(link) {
@@ -50,9 +81,12 @@ export default {
 <style lang="scss">
 .container-page-personal {
   position: relative;
+  background: #f8f8f8;
   .group-userinfo {
-    padding: 50rpx 50rpx 0;
+    padding: 50rpx 50rpx 20rpx;
+    margin-bottom: 20rpx;
     position: relative;
+    background-color: #fff;
   }
   .item-btn-setting {
     position: absolute;
@@ -65,6 +99,106 @@ export default {
     font-size: 60rpx;
     font-weight: bold;
     color: #000;
+  }
+  .group-userinfo,
+  .group-grid {
+    position: relative;
+    background-color: rgba($color: #fff, $alpha: 1);
+    &:after {
+      position: absolute;
+      z-index: 10;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      content: "";
+      -webkit-transform: scaleY(0.5);
+      transform: scaleY(0.5);
+      background-color: $uni-border-color;
+    }
+
+    &:before {
+      position: absolute;
+      z-index: 10;
+      right: 0;
+      top: 0;
+      left: 0;
+      height: 1px;
+      content: "";
+      -webkit-transform: scaleY(0.5);
+      transform: scaleY(0.5);
+      background-color: $uni-border-color;
+    }
+  }
+  .uni-list {
+    margin-top: 20rpx;
+    background-color: rgba($color: #fff, $alpha: 1);
+  }
+  &.show-on {
+    background: none;
+    .group-userinfo,
+    .group-grid,
+    .uni-list {
+      background-color: rgba($color: #fff, $alpha: 0);
+      &:before,
+      &:after {
+        display: none;
+      }
+    }
+    .group-unilist {
+      width: 50vw;
+      overflow-x: hidden;
+      position: relative;
+      left: 20vw;
+      top: 30vw;
+      transform: rotate(30deg);
+    }
+    .group-uniGrid {
+      transform: rotate(30deg);
+      position: relative;
+      top: 13vw;
+      left: -11vw;
+    }
+    .item-animation {
+      width: 100vw;
+      min-height: 225vw;
+      // height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      &::before {
+        content: "";
+        display: block;
+        width: 200vw;
+        height: 50vw;
+        position: absolute;
+        top: -5vw;
+        right: -5vw;
+        z-index: -1;
+        transform: rotateZ(30deg);
+        transform-origin: 50% 50%;
+        border: 50rpx double;
+        background-color: #fff;
+        color: $miva-color-global;
+        border-radius: 0 40px 0 0;
+      }
+      &::after {
+        content: "";
+        display: block;
+        width: 400vw;
+        height: 50vw;
+        position: absolute;
+        top: 0vw;
+        left: -100vw;
+        z-index: -2;
+        transform: rotateZ(-60deg);
+        transform-origin: 50% 50%;
+        border: 50rpx double;
+        background-color: $miva-color-global;
+        color: #fff;
+      }
+    }
   }
 }
 </style>

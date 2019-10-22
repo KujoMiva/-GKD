@@ -31,7 +31,7 @@
 	},
 	"系统设置": {
 		"name": "系统设置",
-		"url": "/pages/page-systemSetting/index",
+		"url": "/pages/page-settingSystem/index",
 		"whiteList": true,
 		"blackList": false
 	},
@@ -50,5 +50,17 @@
 	"登录验证码": {
 		"name": "登录验证码",
 		"url": "/pages/page-verifyCode/index"
+	},
+	"设置密码": {
+		"name": "设置密码",
+		"url": "/pages/page-settingPassword/index"
+	},
+	"遇到问题": {
+		"name": "遇到问题",
+		"url": "/pages/page-problem/index"
+	},
+	"搜索": {
+		"name": "搜索",
+		"url": "/pages/page-search/index"
 	}
 }

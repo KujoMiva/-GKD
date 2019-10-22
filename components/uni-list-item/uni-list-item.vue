@@ -65,7 +65,7 @@
 			},
 			showSlot: { //是否显示插槽
 				type: [Boolean,String],
-				default: false
+				default: true
 			},
 			switchChecked: { //Switch是否被选中
 				type: [Boolean, String],

@@ -51,8 +51,8 @@
 // vuex
 import { mapGetters } from 'vuex'
 // item
-import uniList from '@/components/uni-list/uni-list.vue'
-import uniListItem from '@/components/uni-list-item/uni-list-item.vue'
+import uniList from '@/components/uni-list/uni-list'
+import uniListItem from '@/components/uni-list-item/uni-list-item'
 export default {
   components: { uniList, uniListItem },
   data() {

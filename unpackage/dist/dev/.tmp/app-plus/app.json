@@ -5,9 +5,13 @@
     "pages/tabBar-dynamic/index",
     "pages/tabBar-home/index",
     "pages/tabBar-personal/index",
-    "pages/page-systemSetting/index",
+    "pages/page-settingSystem/index",
     "pages/page-systemInfo/index",
-    "pages/page-search/index"
+    "pages/page-search/index",
+    "pages/page-login/index",
+    "pages/page-verifyCode/index",
+    "pages/page-problem/index",
+    "pages/page-settingPassword/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#FFE454",

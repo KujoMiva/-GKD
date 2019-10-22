@@ -23,10 +23,21 @@
 		},
 		{
 			"path": "pages/tabBar-personal/index",
-			"style": {}
+			"style": {
+				"app-plus": {
+					"softinputMode": "adjustPan",
+					"titleNView": {
+						"buttons": [{
+							"text": "效果",
+							"fontSize": "14",
+							"badgeText": "off"
+						}]
+					}
+				}
+			}
 		},
 		{
-			"path": "pages/page-systemSetting/index",
+			"path": "pages/page-settingSystem/index",
 			"style": {
 				"navigationBarTitleText": "系统设置"
 			}
@@ -53,6 +64,18 @@
 			"path": "pages/page-verifyCode/index",
 			"style": {
 				"navigationBarTitleText": " "
+			}
+		},
+		{
+			"path": "pages/page-problem/index",
+			"style": {
+				"navigationBarTitleText": "遇到了什么问题?"
+			}
+		},
+		{
+			"path": "pages/page-settingPassword/index",
+			"style": {
+				"navigationBarTitleText": "设置密码"
 			}
 		}
 

@@ -44,6 +44,7 @@ export default {
   },
   data() {
     return {
+      scrollTop: 0,
       pageShow: false,
       listShow: false,
       listData: [],
@@ -61,7 +62,7 @@ export default {
     }, 1000)
   },
   // 监听滚动事件
-  onPageScroll() {
+  onPageScroll(scrollTop) {
     this.listShow = true
   },
   // 无限加载
@@ -113,6 +114,16 @@ async function testData(vue, num = 5) {
     display: block;
     background-color: $miva-color-global;
     animation: loading-height 0.5s 0.3s linear forwards;
+  }
+  .item-miva{
+    width: 200rpx;
+    height: 200rpx;
+    position: fixed;
+    z-index: -1;
+    bottom: 100rpx;
+    right: 100rpx;
+    border: 30rpx double;
+    color: $miva-color-global;
   }
   .animation-search {
     width: 0;
