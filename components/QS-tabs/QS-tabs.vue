@@ -265,7 +265,8 @@
 			change() {
 				this.countScrollX();
 				if(this.animationMode === 'line2') {
-					this.line2Width = 2;
+					// this.line2Width = 2;
+					this.line2Width = this.animationLineWidth * 1.5;
 					if(this.setTimeoutFc) clearTimeout(this.setTimeoutFc);
 					this.setTimeoutFc = setTimeout(()=>{
 						this.line2Width = this.animationLineWidth;

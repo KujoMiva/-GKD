@@ -21,6 +21,18 @@
 			"style": {}
 		},
 		{
+			"path": "pages/page-login/index",
+			"style": {}
+		},
+		{
+			"path": "pages/page-problem/index",
+			"style": {}
+		},
+		{
+			"path": "pages/page-settingPassword/index",
+			"style": {}
+		},
+		{
 			"path": "pages/tabBar-personal/index",
 			"style": {
 				"app-plus": {
@@ -54,6 +66,7 @@
 			"style": {
 				"navigationBarTitleText": "用户信息",
 				"app-plus": {
+					// "animationType": "zoom-fade-out",
 					"titleNView": {
 						"type": "transparent"
 					}

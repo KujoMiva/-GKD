@@ -1,67 +1,36 @@
 <template>
   <view class="container-page-infoUser">
-    <view class="container-layer-top">
-      <!--  -->
-    </view>
-    <view class="container-layer-btm">
-      <QStabs
-        animation-mode="line2"
-        :tabs="self?['主页', `动态 ${99}`, '操作']:['主页', `动态 ${999}`]"
-        :width="self?systemInfo.screenWidth/1.5:systemInfo.screenWidth"
-        :current="swiperCurrent"
-        :font-size="24"
-        :active-color="'#EAC13A'"
-        @change="tabClickHandler($event, '1')"
-      />
-      <swiper class="item-swiper" :current="swiperCurrent" :duration="200" @change="changeHandler">
-        <swiper-item>
-          <scroll-view class="item-swiper" :show-scrollbar="false" scroll-y="true">
-            <view class=" item-scroll">测试内容</view>
-          </scroll-view>
-        </swiper-item>
-        <swiper-item>
-          <scroll-view class="item-swiper" :show-scrollbar="false" scroll-y="true">
-            <view class=" item-scroll">测试内容</view>
-
-          </scroll-view>
-        </swiper-item>
-        <swiper-item v-if="self">
-          <scroll-view class="item-swiper" :show-scrollbar="false" scroll-y="true">
-            <view class=" item-scroll">测试内容</view>
-
-          </scroll-view>
-        </swiper-item>
-      </swiper>
-    </view>
+    <layerInfo :tabs="tabs">
+      <template #top-body>
+        <view v-if="$img_2" class="item-bg">
+          <miva-image class="item-bg-img" :src="$img_2" />
+        </view>
+        <view class="group-userinfo">
+          <view @click="routerLink('用户信息')">
+            <mivaAvatar :user-id="34" :src="$img_1" :size="120" :checked-avatar="true" />
+            <mivaNickname :size="30" :shadow="$img_2" />
+          </view>
+          <!-- 编辑按钮 -->
+          <view class="item-btn-setting iconfont icon-edit" @click="routerLink('个人信息设置')" />
+        </view>
+      </template>
+      <template v-slot:="{page}">
+        <view v-if="page===1">第一页内容</view>
+        <view v-if="page===2">第二页内容</view>
+        <view v-if="page===3">第三页内容</view>
+      </template>
+    </layerInfo>
   </view>
 </template>
 
 <script>
-// vuex
-import { mapGetters } from 'vuex'
-// items
-import QStabs from '@/components/QS-tabs/QS-tabs'
+// item
+import layerInfo from '@/components/miva-item/layer-info'
 export default {
-  components: { QStabs },
+  components: { layerInfo },
   data() {
     return {
-      self: true,
-      swiperCurrent: 0,
-      moreMore: 'more'
-    }
-  },
-  computed: {
-    ...mapGetters(['systemInfo'])
-  },
-  methods: {
-    routerLink(url) {
-      this.$navigateTo({ url })
-    },
-    tabClickHandler(index, i) {
-      this.swiperCurrent = index
-    },
-    changeHandler(evt) {
-      this.swiperCurrent = evt.detail.current
+      tabs: ['测试第一页', '测试第二页', '测试第三页']
     }
   }
 }
@@ -70,30 +39,30 @@ export default {
 <style lang="scss">
 .container-page-infoUser {
   position: relative;
-  height: 100vh;
-  .container-layer {
-    &-top {
-      height: calc(100vw * (9 / 16) + 60rpx);
-      padding-bottom: 60rpx;
-      box-sizing: border-box;
-      background: #f45050;
-    }
-    &-btm {
-      width: 100vw;
-      height: calc(100vh - 100vw * (9 / 16));
-      position: absolute;
-      top: calc(100vw * (9 / 16));
-      overflow: hidden;
-      border-radius: 30px 30px 0 0;
-      background: #fff;
-    }
-  }
-  .item-swiper {
-    height: calc(100vh - 100vw * (9 / 16));
-  }
-  .item-scroll {
-    padding: 20rpx;
+  .group-userinfo {
+    width: 100%;
+    padding: 0 50rpx 100rpx;
     box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+  }
+  .item-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    background: #fff;
+    &-img {
+      // filter: blur(2px);
+      opacity: 0.7;
+    }
+  }
+  .item-btn-setting {
+    position: absolute;
+    top: 0;
+    right: 50rpx;
+    font-size: 50rpx;
+    color: #000;
   }
 }
 </style>
