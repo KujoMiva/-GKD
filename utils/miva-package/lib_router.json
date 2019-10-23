@@ -29,6 +29,10 @@
 		"whiteList": true,
 		"blackList": false
 	},
+	"用户信息": {
+		"name": "用户信息",
+		"url": "/pages/page-infoUser/index"
+	},
 	"系统设置": {
 		"name": "系统设置",
 		"url": "/pages/page-settingSystem/index",

@@ -2,8 +2,10 @@
   <view class="container-page-personal" :class="show&&'show-on'">
     <view class="item-animation" />
     <view class="group-userinfo">
-      <mivaAvatar :user-id="34" :src="$img_1" :size="120" :checked-avatar="false" />
-      <mivaNickname />
+      <view @click="routerLink('用户信息')">
+        <mivaAvatar :user-id="34" :src="$img_1" :size="120" :checked-avatar="false" />
+        <mivaNickname />
+      </view>
       <!-- 设置按钮 -->
       <view class="item-btn-setting iconfont icon-settings" @click="routerLink('系统设置')" />
     </view>
@@ -72,7 +74,7 @@ export default {
   },
   methods: {
     routerLink(link) {
-      this.$navigateTo({ url: this.$libRouter[link] }, { comefrom: 'open' })
+      this.$navigateTo({ url: this.$libRouter[link] }, { comefrom: 'personal' })
     }
   }
 }

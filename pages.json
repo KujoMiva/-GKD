@@ -1,6 +1,5 @@
 {
-	"pages": [
-		{
+	"pages": [{
 			"path": "pages/open-advert/index",
 			"style": {
 				"navigationStyle": "custom",
@@ -27,11 +26,13 @@
 				"app-plus": {
 					"softinputMode": "adjustPan",
 					"titleNView": {
-						"buttons": [{
-							"text": "效果",
-							"fontSize": "14",
-							"badgeText": "off"
-						}]
+						"buttons": [
+							{
+								"text": "效果",
+								"fontSize": "14",
+								"badgeText": "off"
+							}
+						]
 					}
 				}
 			}
@@ -43,9 +44,20 @@
 			}
 		},
 		{
-			"path": "pages/page-systemInfo/index",
+			"path": "pages/page-infoSystem/index",
 			"style": {
 				"navigationBarTitleText": "系统信息"
+			}
+		},
+		{
+			"path": "pages/page-infoUser/index",
+			"style": {
+				"navigationBarTitleText": "用户信息",
+				"app-plus": {
+					"titleNView": {
+						"type": "transparent"
+					}
+				}
 			}
 		},
 		{
@@ -53,32 +65,7 @@
 			"style": {
 				"navigationBarTitleText": "想要找点什么?"
 			}
-		},
-		{
-			"path": "pages/page-login/index",
-			"style": {
-				"navigationBarTitleText": "欢迎登录"
-			}
-		},
-		{
-			"path": "pages/page-verifyCode/index",
-			"style": {
-				"navigationBarTitleText": " "
-			}
-		},
-		{
-			"path": "pages/page-problem/index",
-			"style": {
-				"navigationBarTitleText": "遇到了什么问题?"
-			}
-		},
-		{
-			"path": "pages/page-settingPassword/index",
-			"style": {
-				"navigationBarTitleText": "设置密码"
-			}
 		}
-
 	],
 	"globalStyle": {
 		"navigationBarBackgroundColor": "#FFE454",
@@ -113,8 +100,7 @@
 		"backgroundColor": "#F8F8F8",
 		"selectedColor": "#FFE454",
 		"borderStyle": "white",
-		"list": [
-			{
+		"list": [{
 				"pagePath": "pages/tabBar-home/index",
 				"text": "首页",
 				"iconPath": "static/icon/Hat.png",

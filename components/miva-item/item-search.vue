@@ -6,7 +6,7 @@
         v-model="inputValComponent"
         type="text"
         class="iconfont icon-search"
-        placeholder="请输入搜索内容"
+        placeholder="搜索"
         confirm-type="search"
         :disabled="disabled"
         :focus="!disabled"
@@ -96,7 +96,7 @@ export default {
   .iconfont::before {
     position: absolute;
     top: 50%;
-    left: 25%;
+    left: 35%;
     transform: translateY(-50%);
     color: grey;
   }
