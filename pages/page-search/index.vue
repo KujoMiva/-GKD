@@ -44,6 +44,9 @@ export default {
   onBackPress() {
     // 隐藏键盘
     uni.hideKeyboard()
+    // #ifdef APP-PLUS
+    plus.key.hideSoftKeybord()
+    // #endif
     console.log('隐藏键盘')
   },
   methods: {
