@@ -19,6 +19,7 @@ export async function uploadImage({ fileInfo = null, success = null }) {
   }
   const { path, size } = fileInfo // 获取文件信息
   const { credentials } = store.getters.stsCache // 获取临时密钥
+  console.log(credentials)
   const requestTask = postObject({
     filePath: path,
     dir: 'image',

@@ -81,6 +81,7 @@ export default {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: #fff;
     &-round {
       border-radius: 50%;
       overflow: hidden;

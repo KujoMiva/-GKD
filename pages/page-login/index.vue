@@ -94,17 +94,14 @@ export default {
   },
   methods: {
     async submit() {
-      uni.showLoading({
-        title: '登录中',
-        mask: true
-      })
-      const loginRes = await this.$store.dispatch(
-        'user/loginPwd',
-        this.accountInfo
-      )
+      uni.showLoading({ title: '登录中', mask: true })
+      const loginRes = await this.$store.dispatch('user/loginPwd', this.accountInfo)
       uni.hideLoading()
       // 隐藏键盘
       uni.hideKeyboard()
+      // #ifdef APP-PLUS
+      plus.key.hideSoftKeybord()
+      // #endif
       if (loginRes.code !== 200) return
       this.$navigateBack({ delta: 1, animationType: 'slide-out-bottom' })
     },

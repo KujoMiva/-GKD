@@ -7,8 +7,9 @@
     }"
   >
     <view class="item-nickname">{{ userInfo.nickname }}</view>
-    <view class="item-level">LV{{ userInfo.level }}</view>
-    <view class="item-vip">{{ userInfo.vip }}</view>
+    <image class="item-icon" :src="`/static/sex-icon-${userInfo.sex || 3}.png`" />
+    <view class="item-level">LV{{ userInfo.level || 1 }}</view>
+    <view class="item-vip">{{ userInfo.vip || '正式会员' }}</view>
   </view>
 </template>
 
@@ -43,8 +44,19 @@ export default {
   position: relative;
   display: flex;
   align-items: center;
+  *{
+    white-space: nowrap;
+  }
   .item-nickname {
     font-weight: bold;
+  }
+  .item-icon {
+    width: 30rpx;
+    height: 30rpx;
+    min-width: 30rpx;
+    min-height: 30rpx;
+    margin-left:5px;
+    vertical-align: sub;
   }
   .item-level {
     transform: scale(0.6);
@@ -64,6 +76,11 @@ export default {
   &.shadow {
     .item-nickname {
       text-shadow: 1px 1px 1px #fff;
+    }
+    .item-icon {
+      padding: 5px;
+      border-radius: 50%;
+      background-color: rgba($color: #fff, $alpha: 1);
     }
     .item-vip {
       box-shadow: 1px 1px 2px darken($miva-color-icon, 20%);

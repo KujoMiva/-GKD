@@ -21,21 +21,22 @@ export function postObject({ filePath, dir = 'default', credentials = {}, succes
     prefix = 'https://cos.' + Region + '.myqcloud.com/' + Bucket + '/' // 这个是后缀式，签名也要指定 Pathname: '/' + Bucket + '/'
   }
   // const signPathname = dir
-  let signPathname = '/' + dir // PostObject 接口 Key 是放在 Body 传输，所以请求路径和签名路径是 /
+  let signPathname = '/' // PostObject 接口 Key 是放在 Body 传输，所以请求路径和签名路径是 /
   if (ForcePathStyle) {
     signPathname = '/' + Bucket + '/' // 如果使用后缀式请求，域名是地域域名，Bucket 是放在路径里
   }
-  const Key = filePath.substr(filePath.lastIndexOf('/') + 1) // 这里指定上传的文件名
+  const Key = dir + parseInt(Math.random() * (1000 * 9999999999)) // filePath.substr(filePath.lastIndexOf('/') + 1) // 这里指定上传的文件名
   const filename = camSafeUrlEncode(Key).replace(/%2F/g, '/')
-  const fileUrl = `${prefix}${signPathname}/${filename}`
+  const fileUrl = `${prefix}${dir}/${filename}`
+
   return uni.uploadFile({
-    url: prefix + signPathname,
+    url: prefix,
     // url: prefix,
     name: 'file',
     filePath: filePath,
     formData: {
-    //   key: `${signPathname}/${Key}`,
-      'key': Key,
+      key: `${dir}/${Key}`,
+      // 'key': Key,
       'success_action_status': 200,
       'Signature': CosAuth({
         SecretId: credentials.tmpSecretId,

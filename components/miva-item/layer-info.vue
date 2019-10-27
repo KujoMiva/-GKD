@@ -69,6 +69,7 @@ export default {
 .container-layer-info {
   position: relative;
   height: 100vh;
+  background: red;
   .container-layer {
     &-top {
       height: calc(100vw * (9 / 16) + 60rpx);
@@ -90,7 +91,8 @@ export default {
     }
   }
   .item-swiper {
-    height: calc(100vh - 100vw * (9 / 16));
+    height: calc(100vh - 100vw * (9 / 16) - 60rpx);
+    // height: 80%;
   }
   .item-scroll {
     padding: 20rpx;

@@ -59,6 +59,21 @@
 		"name": "设置密码",
 		"url": "/pages/page-settingPassword/index"
 	},
+	"个人信息设置": {
+		"name": "个人信息设置",
+		"url": "/pages/page-settingUserInfo/index",
+		"whiteList": false
+	},
+	"头像设置": {
+		"name": "头像设置",
+		"url": "/pages/page-settingAvatar/index",
+		"whiteList": false
+	},
+	"昵称设置": {
+		"name": "昵称设置",
+		"url": "/pages/page-settingUserInfo/children/edit-nickname",
+		"whiteList": false
+	},
 	"遇到问题": {
 		"name": "遇到问题",
 		"url": "/pages/page-problem/index"

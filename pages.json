@@ -33,6 +33,10 @@
 			"style": {}
 		},
 		{
+			"path": "pages/page-verifyCode/index",
+			"style": {}
+		},
+		{
 			"path": "pages/tabBar-personal/index",
 			"style": {
 				"app-plus": {
@@ -56,6 +60,33 @@
 			}
 		},
 		{
+			"path": "pages/page-settingUserInfo/index",
+			"style": {
+				"navigationBarTitleText": "个人信息设置"
+			}
+		},
+		{
+			"path": "pages/page-settingAvatar/index",
+			"style": {
+				"navigationBarTitleText": "头像设置"
+			}
+		},
+		{
+			"path": "pages/page-settingUserInfo/children/edit-nickname",
+			"style": {
+				"navigationBarTitleText": "昵称设置",
+				"app-plus": {
+					"softinputMode": "adjustPan",
+					"titleNView": {
+						"buttons": [{
+							"text": "保存",
+							"fontSize": "14"
+						}]
+					}
+				}
+			}
+		},
+		{
 			"path": "pages/page-infoSystem/index",
 			"style": {
 				"navigationBarTitleText": "系统信息"
@@ -66,7 +97,6 @@
 			"style": {
 				"navigationBarTitleText": "用户信息",
 				"app-plus": {
-					// "animationType": "zoom-fade-out",
 					"titleNView": {
 						"type": "transparent"
 					}

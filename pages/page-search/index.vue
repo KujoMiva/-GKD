@@ -47,7 +47,6 @@ export default {
     // #ifdef APP-PLUS
     plus.key.hideSoftKeybord()
     // #endif
-    console.log('隐藏键盘')
   },
   methods: {
     tabClickHandler(value) {

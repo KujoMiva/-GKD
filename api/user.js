@@ -59,12 +59,26 @@ export function resetPassword({ phone, password, verifyCode }) {
   })
 }
 
+// 设置头像
 export function resetAvatar({ avatar }) {
   return request.put({
     url: '/userAvatar',
     data: {
       avatar
     }
+  })
+}
+// 设置用户信息
+export function resetUserInfo({ nickname, birthday, sex, qq, description }) {
+  const params = { nickname, birthday, sex, qq, description }
+  for (const key in params) {
+    if (params[key] === undefined) {
+      delete params[key]
+    }
+  }
+  return request.put({
+    url: '/userInfo',
+    data: params
   })
 }
 

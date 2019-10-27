@@ -47,7 +47,7 @@ exports.install = async(Vue, store) => {
       return
     }
     // 最终对未登录状态的页面处理 跳转到登录页面
-    Vue.prototype.$switchTab({ url: libRouter['登录'] }, { redirect_to: toUrl })
+    Vue.prototype.$navigateTo({ url: libRouter['登录'] }, { redirect_to: toUrl })
   }
 }
 

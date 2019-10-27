@@ -3,8 +3,8 @@
     <view class="item-animation" />
     <view class="group-userinfo">
       <view @click="routerLink('用户信息')">
-        <mivaAvatar :user-id="34" :src="$img_1" :size="120" :checked-avatar="false" />
-        <mivaNickname />
+        <mivaAvatar :user-id="34" :src="userInfo.avatar||$img_1" :size="120" :checked-avatar="false" />
+        <mivaNickname :user-info="userInfo" />
       </view>
       <!-- 设置按钮 -->
       <view class="item-btn-setting iconfont icon-settings" @click="routerLink('系统设置')" />
@@ -59,7 +59,10 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['systemInfo'])
+    ...mapGetters(['userInfo', 'systemInfo'])
+  },
+  created() {
+    this.$store.dispatch('user/getUserInfoSelf')
   },
   onNavigationBarButtonTap(evt) {
     console.log(evt)
