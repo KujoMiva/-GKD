@@ -95,7 +95,7 @@ export default {
     // height: 80%;
   }
   .item-scroll {
-    padding: 20rpx;
+    padding: 0 20rpx;
     box-sizing: border-box;
   }
 }

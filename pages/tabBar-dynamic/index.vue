@@ -1,16 +1,22 @@
 <template>
   <view class="container-page-dynamic">
-    <!--  -->
-    动态tabbar页面
+    <itemDynamic v-for="(temp, index) in 10" :key="index" :test-props="index" />
   </view>
 </template>
 
 <script>
-export default { }
+import itemDynamic from '@/components/miva-item/item-dynamic'
+export default {
+  components: {
+    itemDynamic
+  }
+}
 </script>
 
 <style lang="scss">
 .container-page-dynamic{
     position: relative;
+    padding: 20rpx;
+    padding-bottom: 100rpx;
 }
 </style>

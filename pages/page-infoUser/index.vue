@@ -39,7 +39,8 @@
         </view>
 
         <view v-if="page===2">
-          <view class="item-nomore">还未发布过动态</view>
+          <itemDynamic v-for="(temp, index) in 10" :key="index" :test-props="index" />
+          <!-- <view class="item-nomore">还未发布过动态</view> -->
         </view>
 
         <view class="item-nomore">- Kujo Miva -<text v-show="false"> {{ page }}</text></view>
@@ -55,8 +56,9 @@ import { mapGetters } from 'vuex'
 // item
 import layerInfo from '@/components/miva-item/layer-info'
 import layerBlock from './components/layer-block'
+import itemDynamic from '@/components/miva-item/item-dynamic'
 export default {
-  components: { layerInfo, layerBlock },
+  components: { layerInfo, layerBlock, itemDynamic },
   data() {
     return {
       tabs: ['主页', '动态']
