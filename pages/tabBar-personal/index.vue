@@ -2,10 +2,8 @@
   <view class="container-page-personal" :class="show&&'show-on'">
     <view class="item-animation" />
     <view class="group-userinfo">
-      <view @click="routerLink('用户信息')">
-        <mivaAvatar :user-id="34" :src="userInfo.avatar||$img_1" :size="120" :checked-avatar="false" />
-        <mivaNickname :user-info="userInfo" />
-      </view>
+      <mivaAvatar :user-id="userInfo.user_id" :src="userInfo.avatar||$img_1" :size="120" :checked-avatar="false" />
+      <mivaNickname :user-info="userInfo" />
       <!-- 设置按钮 -->
       <view class="item-btn-setting iconfont icon-settings" @click="routerLink('系统设置')" />
     </view>
@@ -65,7 +63,6 @@ export default {
     this.$store.dispatch('user/getUserInfoSelf')
   },
   onNavigationBarButtonTap(evt) {
-    console.log(evt)
     this.show = !this.show
     // #ifdef APP-PLUS
     var webView = this.$mp.page.$getAppWebview()
@@ -77,7 +74,10 @@ export default {
   },
   methods: {
     routerLink(link) {
-      this.$navigateTo({ url: this.$libRouter[link] }, { comefrom: 'personal' })
+      this.$navigateTo(
+        { url: this.$libRouter[link] },
+        { comefrom: 'personal' }
+      )
     }
   }
 }

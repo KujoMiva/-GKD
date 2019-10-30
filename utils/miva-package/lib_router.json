@@ -74,6 +74,11 @@
 		"url": "/pages/page-settingUserInfo/children/edit-nickname",
 		"whiteList": false
 	},
+	"用户信息input": {
+		"name": "用户信息input",
+		"url": "/pages/page-settingUserInfo/children/edit-input",
+		"whiteList": false
+	},
 	"遇到问题": {
 		"name": "遇到问题",
 		"url": "/pages/page-problem/index"

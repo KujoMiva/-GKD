@@ -28,10 +28,10 @@
 <script>
 // item
 import itemSraech from '@/components/miva-item/item-search'
-import itemSwiper from './comonents/item-swiper'
 import itemTitile from '@/components/miva-item/item-title'
-import itemList from './comonents/item-list-home'
-import randomRender from './comonents/item-randomRender'
+import itemSwiper from './components/item-swiper'
+import itemList from './components/item-list-home'
+import randomRender from './components/item-randomRender'
 import uniLoadMore from '@/components/uni-load-more/uni-load-more'
 export default {
   components: {

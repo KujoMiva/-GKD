@@ -3,9 +3,6 @@ import App from './App'
 // 注册vuex
 import store from './store/'
 Vue.prototype.$store = store
-// 注册路由字典
-// import libRouter from '@/utils/miva-package/lib_router.json'
-// Vue.prototype.$libRouter = libRouter
 // 注册路由拦截器
 import mivaRouter from '@/utils/miva-package/router'
 Vue.use(mivaRouter, store)
@@ -24,12 +21,15 @@ Vue.component('mivaAvatar', mivaAvatar)
 import mivaNickname from './components/miva-item/item-nickname'
 Vue.component('mivaNickname', mivaNickname)
 // 测试图片
-import img_1 from './static/default_1.jpg'
-import img_2 from './static/default_2.jpg'
-import img_3 from './static/default_3.png'
-Vue.prototype.$img_1 = img_1
-Vue.prototype.$img_2 = img_2
-Vue.prototype.$img_3 = img_3
+// import img_1 from './static/default_1.jpg'
+// import img_2 from './static/default_2.jpg'
+// import img_3 from './static/default_3.png'
+// Vue.prototype.$img_1 = img_1
+// Vue.prototype.$img_2 = img_2
+// Vue.prototype.$img_3 = img_3
+Vue.prototype.$img_1 = '/static/default_1.jpg'
+Vue.prototype.$img_2 = '/static/default_2.jpg'
+Vue.prototype.$img_3 = '/static/default_3.png'
 
 Vue.config.productionTip = false
 

@@ -87,6 +87,21 @@
 			}
 		},
 		{
+			"path": "pages/page-settingUserInfo/children/edit-input",
+			"style": {
+				"navigationBarTitleText": "设置",
+				"app-plus": {
+					"softinputMode": "adjustPan",
+					"titleNView": {
+						"buttons": [{
+							"text": "保存",
+							"fontSize": "14"
+						}]
+					}
+				}
+			}
+		},
+		{
 			"path": "pages/page-infoSystem/index",
 			"style": {
 				"navigationBarTitleText": "系统信息"

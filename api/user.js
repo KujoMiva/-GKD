@@ -69,10 +69,10 @@ export function resetAvatar({ avatar }) {
   })
 }
 // 设置用户信息
-export function resetUserInfo({ nickname, birthday, sex, qq, description }) {
-  const params = { nickname, birthday, sex, qq, description }
+export function resetUserInfo({ nickname, birthday, sex, qq, wx, description }) {
+  const params = { nickname, birthday, sex, qq, wx, description }
   for (const key in params) {
-    if (params[key] === undefined) {
+    if (params[key] === undefined || params[key] === null) {
       delete params[key]
     }
   }

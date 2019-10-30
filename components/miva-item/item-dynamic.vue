@@ -103,10 +103,15 @@ export default {
     }
   },
   mounted() {
-    const layerRight = uni.createSelectorQuery().in(this).select('.layer-right')
-    layerRight.fields({ size: true }, data => {
-      this.layerRightInfo = data
-    }).exec()
+    const layerRight = uni
+      .createSelectorQuery()
+      .in(this)
+      .select('.layer-right')
+    layerRight
+      .fields({ size: true }, data => {
+        this.layerRightInfo = data
+      })
+      .exec()
   },
   methods: {
     eventHandler() {
@@ -129,14 +134,13 @@ export default {
   position: relative;
   display: flex;
   padding: 30rpx 0;
-  // padding-bottom: 100rpx;
-  &::after{
-    content: '';
+  &::after {
+    content: "";
     width: 100%;
     display: block;
     position: absolute;
     bottom: 0;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid $uni-border-color;
   }
   .layer {
     &-left {
@@ -153,12 +157,12 @@ export default {
   .item-time {
     position: relative;
     top: -20rpx;
-    font-size: 24rpx;
-    color: #aaa;
+    font-size: $uni-font-size-sm;
+    color: $uni-text-color-grey;
   }
   .group-body-text {
     padding-bottom: 30rpx;
-    font-size: 34rpx;
+    font-size: $uni-font-size-lg;
   }
   .group-image {
     display: flex;
@@ -177,40 +181,42 @@ export default {
       }
     }
   }
-  .group-other{
-      width: 100% * .7;
-      padding-top: 30rpx;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      view {
-        margin: 5rpx;
-        &::before {
-          font-weight: bold;
-          margin: 5rpx;
-          color: #aaa;
-        }
-      }
-    }
-    .item-btn-event{
-      position: absolute;
-      bottom: 17px;
-      right: 5px;
-      color: #aaa;
-    }
-    .item-btn-follw {
-      padding: 10rpx 30rpx;
-      position: absolute;
-      top: 25px;
-      right: 0;
-      font-size: 24rpx;
-      border-radius: 5px;
-      background:#ffafc9;
-      color: #fff;
-      &::before{
-        margin-right: 5px;
+  .group-other {
+    width: 100% * 0.7;
+    padding-top: 30rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    view {
+      margin: 5rpx;
+      font-size: $uni-font-size-base;
+      color: $uni-text-color-grey;
+      &::before {
+        margin: 10rpx;
+        font-size: $uni-font-size-lg;
         font-weight: bold;
       }
     }
+  }
+  .item-btn-event {
+    position: absolute;
+    bottom: 17px;
+    right: 5px;
+    color: $uni-text-color-grey;
+  }
+  .item-btn-follw {
+    padding: 10rpx 30rpx;
+    position: absolute;
+    top: 25px;
+    right: 0;
+    font-size: 24rpx;
+    border-radius: 5px;
+    background: $miva-color-pink;
+    color: $uni-text-color-inverse;
+    &::before {
+      margin-right: 5px;
+      font-weight: bold;
+    }
+  }
 }
 </style>

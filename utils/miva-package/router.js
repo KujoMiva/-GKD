@@ -15,6 +15,7 @@ exports.install = async(Vue, store) => {
       const { url, name: pageName, whiteList, blackList } = params.url || {}
       const queryParams = transfromQuery(query)
       params.url = url + queryParams
+      console.log(params, query)
       handler({ type, pageName, params, whiteList, blackList })
     }
   }

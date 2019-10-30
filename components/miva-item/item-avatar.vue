@@ -1,14 +1,6 @@
 // 用户头像组件
 <template>
-  <view
-    :id="src"
-    class="container-components-item-header"
-    :style="{
-      width: `${size}rpx`,
-      height: `${size}rpx`
-    }"
-    @click="routerLink"
-  >
+  <view class="container-components-item-header" :style="styleContainer" @click="routerLink">
     <miva-image
       class="item-avatar item-avatar-round"
       :src="src || 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/doc/github.svg'"
@@ -18,7 +10,9 @@
 </template>
 
 <script>
+// vuex
 import { mapGetters } from 'vuex'
+
 export default {
   props: {
     size: {
@@ -39,7 +33,10 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['userInfo'])
+    ...mapGetters(['userInfo']),
+    styleContainer() {
+      return `width: ${this.size}rpx; height: ${this.size}rpx`
+    }
   },
   methods: {
     // 跳转去个人信息页面
@@ -50,7 +47,7 @@ export default {
       }
       // 如果props没有传过来userid 就跳转去登录页面
       if (!this.userId) {
-        this.$navigateTo({ url: '/pages/page-group-account/login' })
+        this.$navigateTo({ url: this.$libRouter['登录'] })
         return
       }
       // 如果vuex里的用户信息不存在,就获取用户信息
@@ -58,12 +55,13 @@ export default {
         await this.$store.dispatch('user/getUserInfoSelf')
       }
       // 判断如果用户id和props传来的id一样就跳转去用户个人信息页面, 如果不一样就跳转去他人信息页面
+      // 改版后 统一了用户信息界面,所以在此不需要判断用户id了.交于用户信息界面判断
       // eslint-disable-next-line
-      if (this.userInfo && this.userInfo.user_id == this.userId) {
-        this.$switchTab({ url: '/pages/page-tabbar-self/selfInfo' })
-      } else {
-        this.$navigateTo({ url: `/pages/page-tabbar-self/otherInfo?id=${this.userId}` })
-      }
+      // if (this.userInfo && this.userInfo.user_id == this.userId) {
+      //   this.$navigateTo({ url: this.$libRouter['用户信息'] })
+      // } else {
+      this.$navigateTo({ url: this.$libRouter['用户信息'] }, { id: this.userId })
+      // }
     }
   }
 }
