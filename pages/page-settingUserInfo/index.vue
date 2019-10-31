@@ -40,8 +40,8 @@
     <!--  -->
     <view class="group">
       <uniList>
-        <uniListItem title="帐号和绑定设置" :can-warp="true" :show-arrow="false" :show-slot="true" :hover="true" @click="resetBind" />
-        <uniListItem title="个人主页展示设置" :can-warp="true" :show-arrow="false" :show-slot="true" :hover="true" @click="resetShow" />
+        <uniListItem title="帐号绑定设置" :can-warp="true" :show-arrow="false" :show-slot="true" :hover="true" @click="routerLink('帐号绑定设置')" />
+        <uniListItem title="个人主页展示设置" :can-warp="true" :show-arrow="false" :show-slot="true" :hover="true" @click="routerLink('个人主页展示设置')" />
       </uniList>
     </view>
     <!--  -->
@@ -77,40 +77,20 @@ export default {
   },
   methods: {
     routerLink(url, query = {}) {
-      if (!query.default) {
-        query.default = ''
-      }
+      console.log('settingUserInfoRouterLink-log:', url, query)
       this.$navigateTo({ url: this.$libRouter[url] }, query)
     },
     // 修改性别
     async resetSex(evt) {
-      console.log('修改性别', evt.detail)
       const { value } = evt.detail
       await resetUserInfo({ sex: Number(value) + 1 })
       await this.$store.dispatch('user/getUserInfoSelf')
     },
     // 修改生日
     async resetBirthday(evt) {
-      console.log('修改生日', evt.detail)
       const { value } = evt.detail
       await resetUserInfo({ birthday: value })
       await this.$store.dispatch('user/getUserInfoSelf')
-    },
-    // 修改QQ
-    resetQQ() {
-      console.log('修改QQ')
-    },
-    // 修改签名
-    resetDescription() {
-      console.log('修改签名')
-    },
-    // 帐号绑定设置
-    resetBind() {
-      console.log('帐号绑定设置')
-    },
-    // 个人主页展示设置
-    resetShow() {
-      console.log('个人主页展示设置')
     }
   }
 }

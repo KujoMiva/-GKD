@@ -20,7 +20,7 @@ request.prototype.addGlobalInterce({
     if (store.getters.token) {
       config.header['token'] = store.getters.token
     }
-
+    console.log('request-log:', config)
     return config
   },
 
@@ -29,7 +29,7 @@ request.prototype.addGlobalInterce({
   // return Promise.reject('xxxxx')，主动抛出错误
   response(res) {
     const { data } = res
-    console.log(data)
+    console.log('response-log:', data)
 
     // 停止发送请求 request.stop()
     if (JSON.stringify(res) === '{"errMsg":"request:fail abort"}') {

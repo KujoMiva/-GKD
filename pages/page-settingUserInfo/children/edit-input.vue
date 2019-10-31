@@ -74,11 +74,18 @@ export default {
     }
   },
   onLoad(option) {
-    console.log(option)
+    console.log('edit-input-log:', option)
     this.editNow = option.edit
-    this.editValue = option.default === 'undefined' ? '' : option.default
+    this.editValue = option.default === 'undefined' || option.default === 'null' ? '' : option.default
   },
   async onNavigationBarButtonTap() {
+    // 打开提示
+    this.showTip = true
+    // 判断输入格式
+    if (!this.editValue) {
+      uni.showToast({ title: '输入格式不正确', icon: 'none', position: 'bottom' })
+      return
+    }
     uni.showLoading({ title: '修改中', mask: true })
     await this.settingHandler()
     await this.$store.dispatch('user/getUserInfoSelf')
@@ -99,7 +106,7 @@ export default {
   },
   methods: {
     async settingHandler() {
-      console.log({ [this.editNow]: this.editValue })
+      console.log('settingHandler-log', { [this.editNow]: this.editValue })
       await resetUserInfo({ [this.editNow]: this.editValue })
     }
   }

@@ -69,14 +69,19 @@
 		"url": "/pages/page-settingAvatar/index",
 		"whiteList": false
 	},
-	"昵称设置": {
-		"name": "昵称设置",
-		"url": "/pages/page-settingUserInfo/children/edit-nickname",
-		"whiteList": false
-	},
 	"用户信息input": {
 		"name": "用户信息input",
 		"url": "/pages/page-settingUserInfo/children/edit-input",
+		"whiteList": false
+	},
+	"个人主页展示设置": {
+		"name": "个人主页展示设置",
+		"url": "/pages/page-settingUserInfo/children/edit-show",
+		"whiteList": false
+	},
+	"帐号绑定设置": {
+		"name": "帐号绑定设置",
+		"url": "/pages/page-settingBind/index",
 		"whiteList": false
 	},
 	"遇到问题": {

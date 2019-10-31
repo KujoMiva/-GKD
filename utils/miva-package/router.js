@@ -12,16 +12,15 @@ exports.install = async(Vue, store) => {
   // 参数处理中间件
   async function middleware(type, handler) {
     return (params, query = {}) => {
-      const { url, name: pageName, whiteList, blackList } = params.url || {}
+      const { url, name: pageName = '', whiteList = true, blackList = false } = params.url || {}
       const queryParams = transfromQuery(query)
       params.url = url + queryParams
-      console.log(params, query)
       handler({ type, pageName, params, whiteList, blackList })
+      console.log('router-log:', pageName, params, query, type, whiteList, blackList)
     }
   }
   // 页面跳转处理器
   async function handler({ type, params, whiteList = true, blackList = false, pageName = '' }) {
-    console.log(type, params, whiteList, blackList, pageName)
     const { data: isLogin } = await getToken() || {}
     const { networkType } = store.getters
     const toUrl = params.url.split('?')[0]

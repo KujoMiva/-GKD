@@ -72,18 +72,9 @@
 			}
 		},
 		{
-			"path": "pages/page-settingUserInfo/children/edit-nickname",
+			"path": "pages/page-settingBind/index",
 			"style": {
-				"navigationBarTitleText": "昵称设置",
-				"app-plus": {
-					"softinputMode": "adjustPan",
-					"titleNView": {
-						"buttons": [{
-							"text": "保存",
-							"fontSize": "14"
-						}]
-					}
-				}
+				"navigationBarTitleText": "帐号绑定设置"
 			}
 		},
 		{
@@ -99,6 +90,12 @@
 						}]
 					}
 				}
+			}
+		},
+		{
+			"path": "pages/page-settingUserInfo/children/edit-show",
+			"style": {
+				"navigationBarTitleText": "个人主页展示设置"
 			}
 		},
 		{
