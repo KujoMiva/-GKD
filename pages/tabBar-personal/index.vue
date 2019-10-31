@@ -3,7 +3,7 @@
     <view class="item-animation" />
     <view class="group-userinfo">
       <mivaAvatar :user-id="userInfo.user_id" :src="userInfo.avatar||$img_1" :size="120" :checked-avatar="false" />
-      <mivaNickname :user-info="userInfo" />
+      <mivaNickname :user-info="verifyLoginUserInfo" />
       <!-- 设置按钮 -->
       <view class="item-btn-setting iconfont icon-settings" @click="routerLink('系统设置')" />
     </view>
@@ -57,7 +57,10 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['userInfo', 'systemInfo'])
+    ...mapGetters(['userInfo', 'systemInfo']),
+    verifyLoginUserInfo() {
+      return this.userInfo && this.userInfo.nickname ? this.userInfo : { nickname: '未登录' }
+    }
   },
   created() {
     this.$store.dispatch('user/getUserInfoSelf')
@@ -74,10 +77,7 @@ export default {
   },
   methods: {
     routerLink(link) {
-      this.$navigateTo(
-        { url: this.$libRouter[link] },
-        { comefrom: 'personal' }
-      )
+      this.$navigateTo({ url: this.$libRouter[link] }, { comefrom: 'personal' })
     }
   }
 }
@@ -116,7 +116,7 @@ export default {
       bottom: 0;
       left: 0;
       height: 1px;
-      content: "";
+      content: '';
       -webkit-transform: scaleY(0.5);
       transform: scaleY(0.5);
       background-color: $uni-border-color;
@@ -129,7 +129,7 @@ export default {
       top: 0;
       left: 0;
       height: 1px;
-      content: "";
+      content: '';
       -webkit-transform: scaleY(0.5);
       transform: scaleY(0.5);
       background-color: $uni-border-color;
@@ -173,7 +173,7 @@ export default {
       left: 0;
       overflow: hidden;
       &::before {
-        content: "";
+        content: '';
         display: block;
         width: 200vw;
         height: 50vw;
@@ -189,7 +189,7 @@ export default {
         border-radius: 0 40px 0 0;
       }
       &::after {
-        content: "";
+        content: '';
         display: block;
         width: 400vw;
         height: 50vw;
