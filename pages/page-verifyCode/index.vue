@@ -1,7 +1,7 @@
 <template>
   <view class="container-page-verifycode">
     <view class="login-title">输入验证码</view>
-    <view class="verify-tip">验证码已发送至 +86 {{ verifyCode.phone || phone }}</view>
+    <view class="verify-tip">验证码已发送至 +86 {{ (verifyCode.phone || phone) | hidePhone }}</view>
     <view class="container-verifycode">
       <view
         v-for="(temp,index) in 6"

@@ -4,44 +4,16 @@
     <view class="container-group-input">
       <view class="container-input">
         <view class="item-path">+86</view>
-        <input
-          v-model="accountInfo.account"
-          class="input-account"
-          type="number"
-          placeholder="请输入手机号"
-          :adjust-position="true"
-        >
+        <input v-model="accountInfo.account" class="input-account" type="number" placeholder="请输入手机号" :adjust-position="true">
       </view>
       <view v-if="passwordLogin" class="container-input">
-        <input
-          v-model="accountInfo.password"
-          class="input-password"
-          placeholder="请输入密码"
-          :password="!passwordShow"
-          :adjust-position="true"
-        >
-        <view
-          style="font-size: 50rpx; color:#666"
-          :class="['iconfont', passwordShow?'icon-eye_protection':'icon-visible']"
-          @click="passwordShow = !passwordShow"
-        />
+        <input v-model="accountInfo.password" class="input-password" placeholder="请输入密码" :password="!passwordShow" :adjust-position="true">
+        <view style="font-size: 50rpx; color:#666" :class="['iconfont', passwordShow?'icon-eye_protection':'icon-visible']" @click="passwordShow = !passwordShow" />
       </view>
       <view v-else class="item-verify-tip">未注册的手机号验证后自动创建账户</view>
     </view>
-    <button
-      v-if="passwordLogin"
-      class="item-submit"
-      :class="(verifyAccount||verifyPassword)&&'item-submit-disabled'"
-      :disabled="verifyAccount||verifyPassword"
-      @click="submit"
-    >登录</button>
-    <button
-      v-else
-      class="item-submit"
-      :class="verifyAccount&&'item-submit-disabled'"
-      :disabled="verifyAccount"
-      @click="routerLink('登录验证码', {phone:accountInfo.account})"
-    >获取短信验证码</button>
+    <button v-if="passwordLogin" class="item-submit" :class="(verifyAccount||verifyPassword)&&'item-submit-disabled'" :disabled="verifyAccount||verifyPassword" @click="submit">登录</button>
+    <button v-else class="item-submit" :class="verifyAccount&&'item-submit-disabled'" :disabled="verifyAccount" @click="routerLink('登录验证码', {phone:accountInfo.account})">获取短信验证码</button>
     <!-- tip -->
     <view class="container-group-tip">
       <text @click="passwordLogin = !passwordLogin">{{ !passwordLogin?'密码登录':'验证码登录' }}</text>
@@ -112,7 +84,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .container-page-login {
   padding: 100rpx;
   .login-title {
@@ -132,7 +104,7 @@ export default {
       padding: 50rpx 0 30rpx;
       display: flex;
       align-items: center;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid $uni-border-color;
     }
     .input-account {
       padding-left: 20rpx;

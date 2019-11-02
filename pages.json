@@ -30,7 +30,15 @@
 		},
 		{
 			"path": "pages/page-settingPassword/index",
-			"style": {}
+			"style": {
+				"navigationBarTitleText": "密码设置"
+			}
+		},
+		{
+			"path": "pages/page-sendDynamic/index",
+			"style": {
+				"navigationBarTitleText": "发动态"
+			}
 		},
 		{
 			"path": "pages/page-verifyCode/index",
@@ -75,6 +83,12 @@
 			"path": "pages/page-settingBind/index",
 			"style": {
 				"navigationBarTitleText": "帐号绑定设置"
+			}
+		},
+		{
+			"path": "pages/page-settingBind/children/bind-phone",
+			"style": {
+				"navigationBarTitleText": "手机号绑定"
 			}
 		},
 		{

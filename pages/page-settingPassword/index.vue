@@ -2,61 +2,27 @@
   <view class="container-page-resetpassword">
     <view v-if="verifyCode.time" class="login-title">验证码有效期 {{ verifyCode.time }}s</view>
     <view v-else class="login-title">{{ title }}</view>
-    <view v-if="verifyCode.time" class="verify-tip">验证码已发送至 +86 {{ verifyCode.phone }}</view>
+    <view v-if="verifyCode.time" class="verify-tip">验证码已发送至 +86 {{ verifyCode.phone | hidePhone }}</view>
     <view class="container-group-input">
       <!-- 手机号   -->
       <view v-if="!verifyCode.time" class="container-input">
         <view class="item-path">+86</view>
-        <input
-          v-model="accountInfo.phone"
-          class="input-account"
-          type="number"
-          placeholder="请输入手机号"
-          :adjust-position="true"
-        >
+        <input v-model="accountInfo.phone" class="input-account" type="number" placeholder="请输入手机号" :adjust-position="true">
       </view>
       <view v-else class="container-group-password">
         <!-- 验证码 -->
         <view class="container-input">
-          <input
-            v-model="accountInfo.verifyCode"
-            class="input-password"
-            type="number"
-            placeholder="请输入验证码"
-            :adjust-position="true"
-          >
+          <input v-model="accountInfo.verifyCode" class="input-password" type="number" placeholder="请输入验证码" :adjust-position="true">
         </view>
         <!-- 新密码 -->
         <view class="container-input">
-          <input
-            v-model="accountInfo.password"
-            class="input-password"
-            placeholder="请输入新密码"
-            :password="!passwordShow"
-            :adjust-position="true"
-          >
-          <view
-            style="font-size: 50rpx; color:#666"
-            :class="['iconfont', passwordShow?'icon-eye_protection':'icon-visible']"
-            @click="passwordShow = !passwordShow"
-          />
+          <input v-model="accountInfo.password" class="input-password" placeholder="请输入新密码" :password="!passwordShow" :adjust-position="true">
+          <view style="font-size: 50rpx; color:#666" :class="['iconfont', passwordShow?'icon-eye_protection':'icon-visible']" @click="passwordShow = !passwordShow" />
         </view>
       </view>
     </view>
-    <button
-      v-if="!verifyCode.time"
-      class="item-submit"
-      :class="verifyAccount&&'item-submit-disabled'"
-      :disabled="verifyAccount"
-      @click="sendSMS"
-    >获取短信验证码</button>
-    <button
-      v-else
-      class="item-submit"
-      :class="verifyPassword&&'item-submit-disabled'"
-      :disabled="verifyPassword"
-      @click="submit"
-    >提交</button>
+    <button v-if="!verifyCode.time" class="item-submit" :class="verifyAccount&&'item-submit-disabled'" :disabled="verifyAccount" @click="sendSMS">获取短信验证码</button>
+    <button v-else class="item-submit" :class="verifyPassword&&'item-submit-disabled'" :disabled="verifyPassword" @click="submit">提交</button>
   </view>
 </template>
 
@@ -96,6 +62,13 @@ export default {
       }
     }
   },
+  onLoad(option) {
+    console.log(option)
+    const { phone = '' } = option
+    if (phone.length === 11) {
+      this.accountInfo.phone = phone
+    }
+  },
   methods: {
     sendSMS() {
       this.$store.dispatch('user/verifyCode', this.accountInfo.phone)
@@ -122,7 +95,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .container-page-resetpassword {
   padding: 100rpx;
   .login-title {
@@ -143,7 +116,7 @@ export default {
       padding: 50rpx 0 30rpx;
       display: flex;
       align-items: center;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid $uni-border-color;
     }
     .input-account {
       padding-left: 20rpx;
@@ -159,13 +132,13 @@ export default {
     }
   }
   .item-submit {
-    background: #eac13a;
+    background: $miva-color-global;
     transition: all 1s;
-  }
-  .item-submit-disabled {
-    background: #fff5cb;
-    &::after {
-      display: none;
+    &-disabled {
+      background: lighten($miva-color-global, 20%);
+      &::after {
+        display: none;
+      }
     }
   }
 }

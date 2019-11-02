@@ -1,9 +1,5 @@
 // import parseTime, formatTime and set to filter
-export {
-  parseTime,
-  formatTime
-}
-  from '@/utils'
+export { parseTime, formatTime } from '@/utils'
 
 /**
  * Show plural label if time is plural number
@@ -18,6 +14,9 @@ function pluralize(time, label) {
   return time + label + 's'
 }
 
+export function hidePhone(phone) {
+  return phone.toString().replace(/^(\d{3})\d{4}(\d{4})$/, '$1****$2')
+}
 /**
  * 时间格式化
  * @param {number} time

@@ -54,10 +54,14 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 /*每个页面公共css */
 @import "./static/iconfont/iconfont.css";
 body {
   background-color: #fff;
 }
+.group {
+    padding-top: $uni-spacing-col-lg;
+    background-color: $uni-bg-color-grey;
+  }
 </style>

@@ -23,6 +23,12 @@
 		"whiteList": true,
 		"blackList": false
 	},
+	"发动态": {
+		"name": "发动态",
+		"url": "/pages/page-sendDynamic/index",
+		"whiteList": false,
+		"blackList": true
+	},
 	"个人中心": {
 		"name": "个人中心",
 		"url": "/pages/tabBar-personal/index",
@@ -82,6 +88,11 @@
 	"帐号绑定设置": {
 		"name": "帐号绑定设置",
 		"url": "/pages/page-settingBind/index",
+		"whiteList": false
+	},
+	"手机号绑定": {
+		"name": "手机号绑定",
+		"url": "/pages/page-settingBind/children/bind-phone",
 		"whiteList": false
 	},
 	"遇到问题": {
