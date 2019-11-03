@@ -1,38 +1,53 @@
 <template>
   <view class="container-page-send-dynamic">
-    <view>
-      <view class="container-textarea">
-        <textarea v-model="editValue" class="container-textarea" placeholder="在这里输入内容..." :auto-height="true" :maxlength="255" :show-confirm-bar="false" :cursor="editValue.length" focus />
-      </view>
-      <view class="item-edit-length" @click="submit">{{ editLen }}</view>
-      <!-- <view class="item-tip iconfont icon-check icon-biaopaitubiao">在这里排版是没用的哦!</view> -->
-      <div>{{ submitValue }}</div>
-    </view>
+    <itemEditer class="item-editer" @getValue="getEditerValue" />
+    <itemImageLayer :width="layerWidth" :img-list="dynamicData.img_list" :show-controler="true" @delete="imgDeleteHanlder" @upload="imgUploadHandler" />
   </view>
 </template>
 
 <script>
+import itemEditer from '@/components/miva-item/item-editer'
+import itemImageLayer from '@/components/miva-item/item-image-layer'
 export default {
+  components: {
+    itemEditer,
+    itemImageLayer
+  },
   data() {
     return {
-      editValue: '',
-      submitValue: ''
+      layerWidth: 0,
+      dynamicData: {
+        body: '',
+        img_list: []
+      }
     }
   },
-  computed: {
-    editLen() {
-      return this.editValue.length
-    }
+  // created() {
+  //   for (let i = 0; i < 7; i++) {
+  //     this.dynamicData['img_list'].push(`/static/default_${i % 2 === 0 ? 1 : 2}.jpg`)
+  //   }
+  // },
+  mounted() {
+    const layerRight = uni.createSelectorQuery().in(this).select('.item-editer')
+    layerRight.fields({ size: true }, data => {
+      this.layerWidth = data.width
+    }).exec()
+  },
+  onNavigationBarButtonTap(evt) {
+    this.submit()
   },
   methods: {
     submit() {
-      const arr = []
-      this.editValue.split('\n').forEach(element => {
-        arr.push(`<p>${element}</p>`)
-      })
-      console.log(arr)
-      //   arr.join('<br>')
-      this.submitValue = arr.join('<br>')
+      console.log(this.dynamicData)
+    },
+    getEditerValue(val) {
+      this.dynamicData.body = val
+    },
+    imgUploadHandler(res) {
+      this.dynamicData.img_list.push(res.fileUrl)
+    },
+    imgDeleteHanlder(index) {
+      this.dynamicData.img_list.splice(index, 1)
     }
   }
 }
@@ -42,24 +57,6 @@ export default {
 .container-page-send-dynamic {
   position: relative;
   padding: 30rpx;
-  .container-textarea {
-    width: 100%;
-    min-height: 228rpx;
-    position: relative;
-  }
-  .item-edit-length {
-    text-align: right;
-    font-size: $uni-font-size-base;
-    color: $uni-text-color-grey;
-  }
-  .item-tip {
-    padding-top: 20rpx;
-    font-size: 28rpx;
-    color: $uni-color-error;
-    &::before {
-      margin-right: 10rpx;
-      font-size: 30rpx;
-    }
-  }
+
 }
 </style>

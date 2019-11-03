@@ -37,7 +37,16 @@
 		{
 			"path": "pages/page-sendDynamic/index",
 			"style": {
-				"navigationBarTitleText": "发动态"
+				"navigationBarTitleText": "发动态",
+				"app-plus": {
+					"softinputMode": "adjustPan",
+					"titleNView": {
+						"buttons": [{
+							"text": "发布",
+							"fontSize": "14"
+						}]
+					}
+				}
 			}
 		},
 		{

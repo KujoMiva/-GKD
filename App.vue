@@ -64,4 +64,7 @@ body {
     padding-top: $uni-spacing-col-lg;
     background-color: $uni-bg-color-grey;
   }
+  p{
+    font-size: $uni-font-size-base;
+  }
 </style>

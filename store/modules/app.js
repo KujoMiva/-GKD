@@ -50,6 +50,7 @@ const actions = {
     })
   },
   getSTS({ state, commit }) {
+    console.log('getSTS-log:尝试获取临时密钥')
     const { stsCache } = state
     return new Promise((resolve, reject) => {
       if (stsCache && Date.now() / 1000 + 30 < stsCache.expiredTime) {
