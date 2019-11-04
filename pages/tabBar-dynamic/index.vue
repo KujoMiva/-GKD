@@ -68,5 +68,6 @@ export default {
   position: relative;
   padding: 20rpx;
   padding-bottom: 100rpx;
+  background-color: $uni-bg-color;
 }
 </style>

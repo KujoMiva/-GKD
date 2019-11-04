@@ -1,5 +1,6 @@
 {
-	"pages": [{
+	"pages": [
+		{
 			"path": "pages/open-advert/index",
 			"style": {
 				"navigationStyle": "custom",
@@ -41,12 +42,20 @@
 				"app-plus": {
 					"softinputMode": "adjustPan",
 					"titleNView": {
-						"buttons": [{
-							"text": "发布",
-							"fontSize": "14"
-						}]
+						"buttons": [
+							{
+								"text": "发布",
+								"fontSize": "14"
+							}
+						]
 					}
 				}
+			}
+		},
+		{
+			"path": "pages/page-infoDynamic/index",
+			"style": {
+				"navigationBarTitleText": "动态详情"
 			}
 		},
 		{
@@ -107,10 +116,12 @@
 				"app-plus": {
 					"softinputMode": "adjustPan",
 					"titleNView": {
-						"buttons": [{
-							"text": "保存",
-							"fontSize": "14"
-						}]
+						"buttons": [
+							{
+								"text": "保存",
+								"fontSize": "14"
+							}
+						]
 					}
 				}
 			}
@@ -178,7 +189,8 @@
 		"backgroundColor": "#F8F8F8",
 		"selectedColor": "#FFE454",
 		"borderStyle": "white",
-		"list": [{
+		"list": [
+			{
 				"pagePath": "pages/tabBar-home/index",
 				"text": "首页",
 				"iconPath": "static/icon/Hat.png",

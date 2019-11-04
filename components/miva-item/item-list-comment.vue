@@ -16,11 +16,11 @@
       <view class="container-layer-other">
         <view class="group-other">
           <view class="iconfont">
-            <text class="iconfont icon-tubiao-" />
+            <text class="iconfont icon-zan" />
             <text>{{ 22 }}</text>
           </view>
           <view class="iconfont">
-            <text class="unstar iconfont icon-tubiao-" />
+            <text class="unstar iconfont icon-zan" />
             <text>{{ 22 }}</text>
           </view>
         </view>
@@ -99,7 +99,7 @@ export default {
       font-size: 24rpx;
       display: inline-block;
     }
-    .icon-tubiao- {
+    .icon-zan {
       margin-right: 10rpx;
       font-size: 30rpx;
     }

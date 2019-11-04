@@ -98,7 +98,7 @@ export function formatTime(time, option) {
   if (option) {
     return parseTime(time, option)
   } else {
-    return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`
+    return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`
     //     return (
     //         d.getMonth() +
     //   1 +
