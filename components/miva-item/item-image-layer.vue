@@ -69,7 +69,7 @@ export default {
     }
   },
   created() {
-    console.log(this.width, this.imgList)
+    // console.log(this.width, this.imgList)
   },
   methods: {
     imgDelete(index) {

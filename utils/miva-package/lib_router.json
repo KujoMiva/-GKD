@@ -33,6 +33,10 @@
 		"name": "动态详情",
 		"url": "/pages/page-infoDynamic/index"
 	},
+	"评论详情页": {
+		"name": "评论详情页",
+		"url": "/pages/page-infoComment/index"
+	},
 	"个人中心": {
 		"name": "个人中心",
 		"url": "/pages/tabBar-personal/index",

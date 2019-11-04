@@ -59,6 +59,12 @@
 			}
 		},
 		{
+			"path": "pages/page-infoComment/index",
+			"style": {
+				"navigationBarTitleText": "评论详情页"
+			}
+		},
+		{
 			"path": "pages/page-verifyCode/index",
 			"style": {}
 		},

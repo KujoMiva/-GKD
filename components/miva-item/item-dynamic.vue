@@ -23,7 +23,7 @@
         </view>
 
         <!-- 附加操作 -->
-        <view class="item-btn-event iconfont icon-more1" @click="eventHandler" />
+        <view class="item-btn-event iconfont icon-more1" @click="btnEventHandler" />
       </view>
 
       <!-- 关注按钮 -->
@@ -80,7 +80,7 @@ export default {
     routerLink(url) {
       this.$navigateTo({ url: this.$libRouter[url] })
     },
-    eventHandler() {
+    btnEventHandler() {
       uni.showActionSheet({
         itemList: ['分享', '取消关注', '举报'],
         success: function(res) {
