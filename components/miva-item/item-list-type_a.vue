@@ -1,6 +1,6 @@
 <template>
   <view class="container-components-list-a">
-    <view class="container-top">
+    <view class="container-top" @click="routerLink(233)">
       <!-- 封面 -->
       <miva-image class="list-a-cover" :src="itemData.cover" />
       <!-- 内容容器 -->
@@ -30,17 +30,26 @@
 <script>
 export default {
   props: {
+    libRouter: {
+      type: String,
+      required: true
+    },
     itemData: {
       type: Object,
       default() {
         return {}
       }
     }
+  },
+  methods: {
+    routerLink(id) {
+      this.$navigateTo({ url: this.$libRouter[this.libRouter] }, { id })
+    }
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .container-components-list-a {
   height: 240rpx;
   padding: 50rpx 0;
@@ -91,7 +100,7 @@ export default {
       margin-right: 30rpx;
       border-radius: 10rpx;
       overflow: hidden;
-      box-shadow:0 0 1px #000
+      box-shadow: 0 0 1px #000;
     }
     &-title {
       font-size: 28rpx;

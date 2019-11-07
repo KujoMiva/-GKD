@@ -1,6 +1,14 @@
 import { getToken } from '@/utils/auth'
 import { transfromQuery } from '@/utils'
-import libRouter from '@/utils/miva-package/lib_router.json'
+// import { pages } from '@/utils/miva-package/lib_router.json'
+import { pages } from '@/pages-copy.json'
+
+const libRouter = {}
+for (var val of pages) {
+  const { name, path, whiteList = true, blackList = false } = val
+  libRouter[val.name] = { name, url: `/${path}`, whiteList, blackList }
+}
+console.log('libRouter-log:', libRouter)
 
 exports.install = async(Vue, store) => {
   Vue.prototype.$libRouter = libRouter

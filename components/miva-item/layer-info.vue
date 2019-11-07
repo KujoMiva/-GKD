@@ -4,15 +4,7 @@
       <slot name="top-body" />
     </view>
     <view class="container-layer-btm">
-      <QStabs
-        animation-mode="line2"
-        :tabs="tabs"
-        :width="tabsItemWidth"
-        :current="swiperCurrent"
-        :font-size="24"
-        :active-color="'#EAC13A'"
-        @change="tabClickHandler($event, '1')"
-      />
+      <QStabs animation-mode="line2" :tabs="tabs" :width="tabsItemWidth" :current="swiperCurrent" :font-size="24" :active-color="'#EAC13A'" @change="tabClickHandler($event, '1')" />
       <swiper class="item-swiper" :current="swiperCurrent" :duration="200" @change="changeHandler">
         <swiper-item v-for="(temp, index) in tabs" :key="index">
           <scroll-view class="item-swiper" :show-scrollbar="false" scroll-y="true">
@@ -87,7 +79,7 @@ export default {
       overflow: hidden;
       border-radius: 30px 30px 0 0;
       background: #fff;
-      box-shadow: 0px 0px 5px rgba($color: #000000, $alpha: .5);
+      box-shadow: 0px 0px 5px rgba($color: #000000, $alpha: 0.5);
     }
   }
   .item-swiper {

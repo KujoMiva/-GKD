@@ -13,17 +13,12 @@
         <uniGridItem v-for="(temp, index) in topItemList" :key="index">
           <view style="text-align:center" @click="routerLink(temp.link)">
             <view class="item-icon iconfont" :class="temp.icon" />
-            <view style=" font-weight: bold;color:#000">{{ temp.title }}</view>
+            <view style="font-weight: bold;color:#000">{{ temp.title }}</view>
           </view>
         </uniGridItem>
       </uniGrid>
     </view>
     <view class="group-list" :class="show&&'group-unilist'">
-      <uniList>
-        <uniListItem :show-arrow="false" title="投稿" />
-        <uniListItem :show-arrow="false" title="创作中心" />
-        <uniListItem :show-arrow="false" title="热门活动" />
-      </uniList>
       <uniList>
         <uniListItem :show-arrow="false" title="投稿" />
         <uniListItem :show-arrow="false" title="创作中心" />
@@ -49,17 +44,19 @@ export default {
     return {
       show: false,
       topItemList: [
-        { title: '消息', icon: 'icon-shoucangtubiao', link: '登录' },
-        { title: '好友', icon: 'icon-kafeitubiao', link: '系统设置' },
-        { title: '粉丝', icon: 'icon-liuyantubiao', link: '系统设置' },
-        { title: '动态', icon: 'icon-labtubiao', link: '系统设置' }
+        { title: '消息', icon: 'icon-shoucangtubiao', link: '消息页面' },
+        { title: '好友', icon: 'icon-kafeitubiao', link: '我的好友' },
+        { title: '粉丝', icon: 'icon-liuyantubiao', link: '我的好友' },
+        { title: '动态', icon: 'icon-labtubiao', link: '用户信息' }
       ]
     }
   },
   computed: {
     ...mapGetters(['userInfo', 'systemInfo']),
     verifyLoginUserInfo() {
-      return this.userInfo && this.userInfo.nickname ? this.userInfo : { nickname: '未登录' }
+      return this.userInfo && this.userInfo.nickname
+        ? this.userInfo
+        : { nickname: '未登录' }
     }
   },
   created() {
@@ -77,7 +74,10 @@ export default {
   },
   methods: {
     routerLink(link) {
-      this.$navigateTo({ url: this.$libRouter[link] }, { comefrom: 'personal' })
+      this.$navigateTo(
+        { url: this.$libRouter[link] },
+        { comefrom: 'personal' }
+      )
     }
   }
 }
@@ -116,7 +116,7 @@ export default {
       bottom: 0;
       left: 0;
       height: 1px;
-      content: '';
+      content: "";
       -webkit-transform: scaleY(0.5);
       transform: scaleY(0.5);
       background-color: $uni-border-color;
@@ -129,7 +129,7 @@ export default {
       top: 0;
       left: 0;
       height: 1px;
-      content: '';
+      content: "";
       -webkit-transform: scaleY(0.5);
       transform: scaleY(0.5);
       background-color: $uni-border-color;
@@ -173,7 +173,7 @@ export default {
       left: 0;
       overflow: hidden;
       &::before {
-        content: '';
+        content: "";
         display: block;
         width: 200vw;
         height: 50vw;
@@ -189,7 +189,7 @@ export default {
         border-radius: 0 40px 0 0;
       }
       &::after {
-        content: '';
+        content: "";
         display: block;
         width: 400vw;
         height: 50vw;

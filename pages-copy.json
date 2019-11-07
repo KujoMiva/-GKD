@@ -49,12 +49,7 @@
 			"name": "视频作品详情",
 			"path": "pages/page-infoVideo/index",
 			"style": {
-				"navigationBarTitleText": "视频作品详情",
-				"app-plus": {
-					"titleNView": {
-						"type": "transparent"
-					}
-				}
+				"navigationBarTitleText": "视频作品详情"
 			}
 		},
 		{

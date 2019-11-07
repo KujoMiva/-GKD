@@ -1,6 +1,6 @@
 <template>
   <view class="container-item-comment">
-    <view class="layer-left">
+    <view class="layer-left" :class="isChildren&&'layer-left-border' ">
       <mivaAvatar :user-id="1" :size="80" :checked-avatar="false" />
       <view class="item-floor"># {{ 233 }}</view>
     </view>
@@ -20,14 +20,14 @@
         <view class="item-btn-event iconfont icon-more1" @click="btnEventHandler" />
       </view>
       <!-- 回复 -->
-      <view class="group-comment">
+      <view v-if="showChildren" class="group-comment">
         <view v-for="a in 3" class="item-box">
           <view class="item-group">
             <text class="item-nickname">九条米法</text>
-            <text class="item-body" @click="routerLink('评论详情页')">但要是字母大小写不同，该如何来确定是升序排列，还是降序排序呢？但要是字母大小写不同，该如何来确定是升序排列，还是降序排序呢？</text>
+            <text class="item-body" @click="routerLink('评论详情')">但要是字母大小写不同，该如何来确定是升序排列，还是降序排序呢？但要是字母大小写不同，该如何来确定是升序排列，还是降序排序呢？</text>
           </view>
         </view>
-        <view class="item-total" @click="routerLink('评论详情页')">共999条回复 <text class="iconfont icon-right" /></view>
+        <view class="item-total" @click="routerLink('评论详情')">共999条回复 <text class="iconfont icon-right" /></view>
       </view>
     </view>
   </view>
@@ -44,6 +44,14 @@ export default {
           nickname: '九条米法'
         }
       }
+    },
+    showChildren: {
+      type: [Boolean, String],
+      default: true
+    },
+    isChildren: {
+      type: [Boolean, String],
+      default: true
     }
   },
   methods: {
@@ -85,6 +93,9 @@ export default {
       display: flex;
       flex-direction: column;
       align-items: center;
+      &-border{
+        border-left: 3px solid $miva-color-global;
+      }
     }
     &-right {
       width: 85%;

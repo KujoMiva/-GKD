@@ -1,6 +1,6 @@
 <template>
   <view class="container-page-info-dynamic">
-    <itemDynamic :test-props="7" />
+    <itemDynamic :test-props="7" :can-go-info="false" />
 
     <itemComment v-for="a in 3" />
 

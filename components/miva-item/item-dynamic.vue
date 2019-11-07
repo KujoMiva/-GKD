@@ -7,19 +7,19 @@
 
       <view class="group-info">
         <mivaNickname :user-info="userInfo" />
-        <view class="item-time">{{ 760896000000 | formatTime }}</view>
+        <view class="item-time">{{ dynamicInfo.created_at | formatTime }}</view>
       </view>
 
-      <view class="group-body-text">我们为什么需要缓存？假设我们有一个性能开销比较大的计算属性 A，它需要遍历一个巨大的数组并做大量的计算。然后我们可能有其他的计算属性依赖于 A 。如果没有缓存，我们将不可避免的多次执行 A 的 getter！如果你不希望有缓存，请用方法来替代。</view>
+      <view class="group-body-text">{{ dynamicInfo.content }}</view>
 
-      <itemImageLayer :width="layerRightInfo.width" :img-list="dynamicData.img_list" />
+      <itemImageLayer :width="layerRightInfo.width" :img-list="dynamicInfo.img_list" />
 
       <view class="group-bottom">
         <!-- 点赞评论数组 -->
         <view class="group-other">
-          <view class="other-star iconfont icon-Share" @click="btnShareHandler">100</view>
-          <view class="other-comment iconfont icon-liuyantubiao" @click="btnCommentHandler">99</view>
-          <view class="other-star iconfont icon-aixintubiao" @click="btnStarHandler">100</view>
+          <view class="other-share iconfont icon-Share" @click="btnShareHandler">{{ dynamicInfo.share }}</view>
+          <view class="other-comment iconfont icon-liuyantubiao" @click="btnCommentHandler">{{ dynamicInfo.comment }}</view>
+          <view class="other-star iconfont icon-aixintubiao" :class="true&&'other-star-act' " @click="btnStarHandler">{{ dynamicInfo.star }}</view>
         </view>
 
         <!-- 附加操作 -->
@@ -42,6 +42,34 @@ export default {
       type: Number,
       default: 0
     },
+    canGoInfo: {
+      type: [Boolean, String],
+      default: true
+    },
+    dynamicInfo: {
+      type: Object,
+      default() {
+        const data = {
+          user_id: 34,
+          content: '默认内容',
+          share: 111,
+          star: 222,
+          comment: 333,
+          created_at: 760896000000,
+          img_list: [
+            'http://cq-photo.oss-cn-huhehaote.aliyuncs.com/uploads/20191104/e392a9f4522eab1fda51d4cb7f0bc12d.jpg',
+            'http://cq-photo.oss-cn-huhehaote.aliyuncs.com/uploads/20191104/e392a9f4522eab1fda51d4cb7f0bc12d.jpg',
+            'http://cq-photo.oss-cn-huhehaote.aliyuncs.com/uploads/20191104/e392a9f4522eab1fda51d4cb7f0bc12d.jpg',
+            'http://cq-photo.oss-cn-huhehaote.aliyuncs.com/uploads/20191104/e392a9f4522eab1fda51d4cb7f0bc12d.jpg',
+            'http://cq-photo.oss-cn-huhehaote.aliyuncs.com/uploads/20191104/e392a9f4522eab1fda51d4cb7f0bc12d.jpg'
+          ],
+          star_list: [
+            { user_id: 34, nickname: '九条米法', avatar: 'https://kujomiva-1259361798.cos.ap-chengdu.myqcloud.com/image/image312445369241' }
+          ]
+        }
+        return data
+      }
+    },
     userInfo: {
       type: Object,
       default() {
@@ -58,6 +86,11 @@ export default {
       dynamicData: {
         img_list: []
       }
+    }
+  },
+  computed: {
+    isStar() {
+      return this.testStar === true
     }
   },
   created() {
@@ -82,7 +115,7 @@ export default {
     },
     btnEventHandler() {
       uni.showActionSheet({
-        itemList: ['分享', '取消关注', '举报'],
+        itemList: ['举报'],
         success: function(res) {
           console.log('选中了第' + (res.tapIndex + 1) + '个按钮')
         },
@@ -92,14 +125,28 @@ export default {
       })
     },
     btnFollowHandler() {
-      uni.showToast({ title: '点击了关注按钮', icon: 'none', position: 'bottom' })
+      uni.showToast({
+        title: `关注了用户 (${this.dynamicInfo.user_id})`,
+        icon: 'none',
+        position: 'bottom'
+      })
     },
     btnShareHandler() {
-      uni.showToast({ title: '点击了分享按钮', icon: 'none', position: 'bottom' })
+      uni.showToast({
+        title: '点击了分享按钮',
+        icon: 'none',
+        position: 'bottom'
+      })
     },
     btnCommentHandler() {
-      uni.showToast({ title: '点击了评论按钮', icon: 'none', position: 'bottom' })
-      this.routerLink('动态详情')
+      uni.showToast({
+        title: '点击了评论按钮',
+        icon: 'none',
+        position: 'bottom'
+      })
+      if (this.canGoInfo) {
+        this.routerLink('动态详情')
+      }
     },
     btnStarHandler() {
       uni.showToast({ title: '点了一个赞', icon: 'none', position: 'bottom' })
@@ -155,6 +202,9 @@ export default {
         margin-right: 10rpx;
         font-size: $uni-font-size-lg;
       }
+    }
+    .other-star-act {
+      color: $miva-color-red !important;
     }
   }
   .item-btn-event {

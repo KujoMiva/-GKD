@@ -1,9 +1,8 @@
 <template>
   <view class="container-components-list-b">
-    <miva-image
-      class="list-b-cover"
-      :src="itemData.cover"
-    />
+    <view @click="routerLink(233)">
+      <miva-image class="list-b-cover" :src="itemData.cover" />
+    </view>
     <!-- 下方容器 -->
     <view class="container-btm">
       <!-- 标题 -->
@@ -28,17 +27,27 @@
 <script>
 export default {
   props: {
+    libRouter: {
+      type: String,
+      required: true
+    },
     itemData: {
       type: Object,
       default() {
         return {}
       }
     }
+  },
+  methods: {
+    routerLink(id) {
+      console.log(this.libRouter, id)
+      this.$navigateTo({ url: this.$libRouter[this.libRouter] }, { id })
+    }
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .container-components-list-b {
   height: 450rpx;
   padding: 50rpx 0;

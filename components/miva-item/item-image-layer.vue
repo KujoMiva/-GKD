@@ -119,7 +119,7 @@ export default {
     box-sizing: border-box;
     border-radius: 5px;
     overflow: hidden;
-    transition: all 0.3s;
+    // transition: all 0.3s;
     .item-image {
       width: 100%;
       height: 100%;

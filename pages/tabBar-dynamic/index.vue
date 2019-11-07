@@ -1,7 +1,9 @@
 <template>
   <view class="container-page-dynamic">
-    <itemDynamic v-for="(temp, index) in 10" :key="index" :test-props="index" />
-
+    <view>
+      <itemDynamic v-for="(temp, index) in testData" :key="index" :test-props="index" />
+    </view>
+    <uni-load-more :status="more" />
     <uniFab :pattern="pattern" horizontal="right" :content="contentFab" @trigger="trigger" />
   </view>
 </template>
@@ -10,13 +12,17 @@
 // item
 import uniFab from '@/components/uni-fab/uni-fab'
 import itemDynamic from '@/components/miva-item/item-dynamic'
+import uniLoadMore from '@/components/uni-load-more/uni-load-more'
 export default {
   components: {
     uniFab,
-    itemDynamic
+    itemDynamic,
+    uniLoadMore
   },
   data() {
     return {
+      testData: 5,
+      more: 'more',
       pattern: {
         color: '#ffafc9',
         backgroundColor: '#fff',
@@ -38,6 +44,18 @@ export default {
         }
       ]
     }
+  },
+
+  // 无限加载
+  onReachBottom() {
+    this.more = 'loading'
+    if (this.testData > 20) {
+      this.more = 'noMore'
+      return
+    }
+    setTimeout(async _ => {
+      this.testData += 5
+    }, 300)
   },
   methods: {
     trigger(evt) {

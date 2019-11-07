@@ -1,7 +1,7 @@
 <template>
   <view>
-    <itemListTypeA v-if="itemData.useItem === 0" :item-data="itemData" />
-    <itemListTypeB v-if="itemData.useItem === 1" :item-data="itemData" />
+    <itemListTypeA v-if="itemData.useItem === 0" :lib-router="libRouter" :item-data="itemData" />
+    <itemListTypeB v-if="itemData.useItem === 1" :lib-router="libRouter" :item-data="itemData" />
   </view>
 </template>
 <script>
@@ -16,6 +16,12 @@ export default {
     itemData: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    libRouter() {
+      const arr = ['网盘分享详情', '视频作品详情']
+      return arr[this.itemData.useItem]
     }
   }
   // data() {

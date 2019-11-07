@@ -14,6 +14,10 @@
 <script>
 export default {
   props: {
+    libRouter: {
+      type: String,
+      required: true
+    },
     itemData: {
       type: Array,
       default() {
@@ -32,9 +36,7 @@ export default {
   },
   methods: {
     routerLink(id) {
-      this.$navigateTo({
-        url: `/pages/page-group-details/index?id=${id}`
-      })
+      this.$navigateTo({ url: this.$libRouter[this.libRouter] }, { id })
     }
   }
 }
@@ -43,8 +45,8 @@ export default {
 <style lang="scss">
 .container-components-list-home {
   display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-wrap: wrap;
   .container-leyer-netdisk {
     width: calc(100% / 3);
     height: 100vw / 3;
@@ -60,7 +62,10 @@ export default {
       z-index: 2;
       text-align: right;
       border-radius: 10rpx 10rpx 0 0;
-      background: linear-gradient(rgba($color: #000000, $alpha: .3) 80%, rgba($color: #000000, $alpha: .0));
+      background: linear-gradient(
+        rgba($color: #000000, $alpha: 0.3) 80%,
+        rgba($color: #000000, $alpha: 0)
+      );
       color: #fff;
     }
     .netdisk-cover {
