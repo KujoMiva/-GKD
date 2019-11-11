@@ -4,13 +4,21 @@
       <video class="item-video" :src="test" />
     </view>
     <view class="container-layer-btm">
-      <!--  -->
+      <QStabs
+        animation-mode="line2"
+        :tabs="['简介', '评论']"
+      />
     </view>
   </view>
 </template>
 
 <script>
+import QStabs from '@/components/QS-tabs/QS-tabs'
 export default {
+  components: {
+    QStabs
+
+  },
   data() {
     return {
       test: 'https://unm-video.oss-cn-beijing.aliyuncs.com/%E6%88%91%E4%BB%AC%E7%9A%84%E5%85%B0%E5%B7%9E%E7%89%9B%E8%82%89%E9%9D%A2_2~1.mp4'

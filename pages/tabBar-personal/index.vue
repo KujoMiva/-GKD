@@ -11,7 +11,7 @@
     <view class="group-grid" :class="show&&'group-uniGrid'">
       <uniGrid :column="4" :show-border="false" :highlight="false">
         <uniGridItem v-for="(temp, index) in topItemList" :key="index">
-          <view style="text-align:center" @click="routerLink(temp.link)">
+          <view style="text-align:center" @click="routerLink(temp.link, temp.query)">
             <view class="item-icon iconfont" :class="temp.icon" />
             <view style="font-weight: bold;color:#000">{{ temp.title }}</view>
           </view>
@@ -44,10 +44,30 @@ export default {
     return {
       show: false,
       topItemList: [
-        { title: '消息', icon: 'icon-shoucangtubiao', link: '消息页面' },
-        { title: '好友', icon: 'icon-kafeitubiao', link: '我的好友' },
-        { title: '粉丝', icon: 'icon-liuyantubiao', link: '我的好友' },
-        { title: '动态', icon: 'icon-labtubiao', link: '用户信息' }
+        {
+          title: '消息',
+          icon: 'icon-shoucangtubiao',
+          link: '消息页面',
+          query: { page: 0 }
+        },
+        {
+          title: '好友',
+          icon: 'icon-kafeitubiao',
+          link: '我的好友',
+          query: { page: 0 }
+        },
+        {
+          title: '粉丝',
+          icon: 'icon-liuyantubiao',
+          link: '我的好友',
+          query: { page: 1 }
+        },
+        {
+          title: '动态',
+          icon: 'icon-labtubiao',
+          link: '用户信息',
+          query: { page: 1 }
+        }
       ]
     }
   },
@@ -73,11 +93,8 @@ export default {
     // #endif
   },
   methods: {
-    routerLink(link) {
-      this.$navigateTo(
-        { url: this.$libRouter[link] },
-        { comefrom: 'personal' }
-      )
+    routerLink(link, query) {
+      this.$navigateTo({ url: this.$libRouter[link] }, { ...query })
     }
   }
 }

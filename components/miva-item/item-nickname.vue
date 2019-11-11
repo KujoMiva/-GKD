@@ -59,10 +59,10 @@ export default {
     vertical-align: sub;
   }
   .item-level {
-    transform: scale(0.6);
     padding: 3rpx 10rpx;
     border-radius: 5px;
     border: 1px solid;
+    transform: scale(0.6);
     color: darken($miva-color-icon, 20%);
   }
   .item-vip {
