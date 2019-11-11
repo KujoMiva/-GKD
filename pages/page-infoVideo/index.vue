@@ -49,7 +49,8 @@ export default {
     return {
       ...uni.getSystemInfoSync(),
       showVideo: false,
-      test: 'https://unm-video.oss-cn-beijing.aliyuncs.com/%E6%88%91%E4%BB%AC%E7%9A%84%E5%85%B0%E5%B7%9E%E7%89%9B%E8%82%89%E9%9D%A2_2~1.mp4',
+      test:
+        'https://unm-video.oss-cn-beijing.aliyuncs.com/%E6%88%91%E4%BB%AC%E7%9A%84%E5%85%B0%E5%B7%9E%E7%89%9B%E8%82%89%E9%9D%A2_2~1.mp4',
       tabs: ['详情', '评论'],
       id: 0,
       detailsData: {},
@@ -74,20 +75,35 @@ export default {
     this.id = option.id
     const { id } = this
     this.detailsData = {
-      title: id + '但要是字母大小写不同，该如何来确定是升序排列，还是降序排序呢？',
-      description: id + '但要是字母大小写不同，该如何来确定是升序排列，还是降序排序呢？',
-      cover: 'http://cq-photo.oss-cn-huhehaote.aliyuncs.com/uploads/20190924/080504d289846ef803cc77026e850a60.png',
+      title:
+        id + '但要是字母大小写不同，该如何来确定是升序排列，还是降序排序呢？',
+      description:
+        id + '但要是字母大小写不同，该如何来确定是升序排列，还是降序排序呢？',
+      cover:
+        'http://cq-photo.oss-cn-huhehaote.aliyuncs.com/uploads/20190924/080504d289846ef803cc77026e850a60.png',
       disk_link: '',
       disk_pwd: '',
       created_at: '760896000000',
-      tag: ['漫画', '动画', '灰色', 'warning', 'mal', '灰色', 'warning', 'normal']
+      tag: [
+        '漫画',
+        '动画',
+        '灰色',
+        'warning',
+        'mal',
+        '灰色',
+        'warning',
+        'normal'
+      ]
     }
     // 更多推荐
     for (let i = 0; i < 5; i++) {
       this.moreList.push({
-        title: i + '但要是字母大小写不同，该如何来确定是升序排列，还是降序排序呢？',
-        description: i + '但要是字母大小写不同，该如何来确定是升序排列，还是降序排序呢？',
-        cover: 'http://cq-photo.oss-cn-huhehaote.aliyuncs.com/uploads/20190924/080504d289846ef803cc77026e850a60.png',
+        title:
+          i + '但要是字母大小写不同，该如何来确定是升序排列，还是降序排序呢？',
+        description:
+          i + '但要是字母大小写不同，该如何来确定是升序排列，还是降序排序呢？',
+        cover:
+          'http://cq-photo.oss-cn-huhehaote.aliyuncs.com/uploads/20190924/080504d289846ef803cc77026e850a60.png',
         disk_link: '',
         disk_pwd: '',
         created_at: '760896000000'

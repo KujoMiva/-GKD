@@ -93,6 +93,9 @@ export default {
       this.renderUserInfo = this.userInfo
     }
   },
+  onLoad(option) {
+    this.swiperCurrent = Number(option.page) || 0
+  },
   methods: {
     routerLink(url) {
       this.$navigateTo({ url })
