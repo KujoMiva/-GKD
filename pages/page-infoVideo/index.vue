@@ -6,12 +6,13 @@
     <view class="container-layer-btm">
       <!--  -->
       <QStabs
+        class="item-tabs"
         animation-mode="line2"
         :tabs="tabs"
         :width="tabsItemWidth"
         :current="swiperCurrent"
         :font-size="24"
-        :active-color="'#EAC13A'"
+        :active-color="'#FFE454'"
         @change="tabClickHandler($event, '1')"
       />
       <swiper class="item-swiper" :current="swiperCurrent" :duration="200" @change="changeHandler">
@@ -19,7 +20,7 @@
         <swiper-item>
           <scroll-view class="item-swiper" :show-scrollbar="false" scroll-y="true">
             <view class="item-scroll">
-              <itemPageSlice1 :details-data="detailsData" :more-list="moreList" />
+              <itemPageDetails :details-data="detailsData" :more-list="moreList" />
             </view>
           </scroll-view>
         </swiper-item>
@@ -41,10 +42,10 @@
 // items
 import QStabs from '@/components/QS-tabs/QS-tabs'
 import itemComment from '@/components/miva-item/item-comment'
-import itemPageSlice1 from './children/item-page-slice-1'
+import itemPageDetails from './components/item-page-details'
 
 export default {
-  components: { QStabs, itemComment, itemPageSlice1 },
+  components: { QStabs, itemComment, itemPageDetails },
   data() {
     return {
       ...uni.getSystemInfoSync(),
@@ -152,6 +153,9 @@ export default {
       background: #fff;
       box-shadow: 0px 0px 5px rgba($color: #000000, $alpha: 0.5);
     }
+  }
+  .item-tabs {
+    box-shadow:  0 0 3px $uni-border-color;
   }
   .item-swiper {
     height: calc(100vh - 100vw * (9 / 16) - 60rpx);

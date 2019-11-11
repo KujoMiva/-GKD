@@ -255,12 +255,12 @@
 				"iconPath": "static/icon/Hat.png",
 				"selectedIconPath": "static/icon/Hat_act.png"
 			},
-			{
-				"pagePath": "pages/tabBar-classify/index",
-				"text": "分类",
-				"iconPath": "static/icon/Shirt.png",
-				"selectedIconPath": "static/icon/Shirt_act.png"
-			},
+			// {
+			// 	"pagePath": "pages/tabBar-classify/index",
+			// 	"text": "分类",
+			// 	"iconPath": "static/icon/Shirt.png",
+			// 	"selectedIconPath": "static/icon/Shirt_act.png"
+			// },
 			{
 				"pagePath": "pages/tabBar-dynamic/index",
 				"text": "动态",

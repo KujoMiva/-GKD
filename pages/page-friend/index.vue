@@ -1,6 +1,15 @@
 <template>
   <view class="container-page-friend">
-    <QStabs class="item-tabs" animation-mode="line2" :width="tabsItemWidth" :tabs="tabs" :current="swiperCurrent" :font-size="24" active-color="#FFE454" @change="tabClickHandler($event, '1')" />
+    <QStabs
+      class="item-tabs"
+      animation-mode="line2"
+      :width="tabsItemWidth"
+      :tabs="tabs"
+      :current="swiperCurrent"
+      :font-size="24"
+      active-color="#FFE454"
+      @change="tabClickHandler($event, '1')"
+    />
     <swiper class="item-swiper" :current="swiperCurrent" :duration="200" @change="changeHandler">
       <swiper-item>
         <scroll-view class="item-swiper" :show-scrollbar="false" scroll-y="true">
