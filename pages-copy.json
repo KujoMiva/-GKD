@@ -1,6 +1,5 @@
 {
-	"pages": [
-		{
+	"pages": [{
 			"name": "开屏页面",
 			"path": "pages/open-advert/index",
 			"style": {
@@ -39,6 +38,13 @@
 			}
 		},
 		{
+			"name": "合辑作品详情",
+			"path": "pages/page-infoAudio/index",
+			"style": {
+				"navigationBarTitleText": "合辑作品详情页"
+			}
+		},
+		{
 			"name": "系统信息",
 			"path": "pages/page-infoSystem/index",
 			"style": {
@@ -49,7 +55,12 @@
 			"name": "视频作品详情",
 			"path": "pages/page-infoVideo/index",
 			"style": {
-				"navigationBarTitleText": "视频作品详情"
+				"navigationBarTitleText": "视频作品详情",
+				"app-plus": {
+					"titleNView": {
+						"type": "transparent"
+					}
+				}
 			}
 		},
 		{
@@ -94,12 +105,10 @@
 				"app-plus": {
 					"softinputMode": "adjustPan",
 					"titleNView": {
-						"buttons": [
-							{
-								"text": "发布",
-								"fontSize": "14"
-							}
-						]
+						"buttons": [{
+							"text": "发布",
+							"fontSize": "14"
+						}]
 					}
 				}
 			}
@@ -147,12 +156,10 @@
 				"app-plus": {
 					"softinputMode": "adjustPan",
 					"titleNView": {
-						"buttons": [
-							{
-								"text": "保存",
-								"fontSize": "14"
-							}
-						]
+						"buttons": [{
+							"text": "保存",
+							"fontSize": "14"
+						}]
 					}
 				}
 			}
@@ -198,13 +205,11 @@
 				"app-plus": {
 					"softinputMode": "adjustPan",
 					"titleNView": {
-						"buttons": [
-							{
-								"text": "效果",
-								"fontSize": "14",
-								"badgeText": "off"
-							}
-						]
+						"buttons": [{
+							"text": "效果",
+							"fontSize": "14",
+							"badgeText": "off"
+						}]
 					}
 				}
 			}
@@ -217,16 +222,6 @@
 		"navigationStyle": "default",
 		"backgroundColor": "#FFE454",
 		"backgroundTextStyle": "dark",
-		"enablePullDownRefresh": false,
-		"onReachBottomDistance": 50,
-		"backgroundColorTop": "#FFFFFF",
-		"backgroundColorBottom": "#FFFFFF",
-		"titleImage": "",
-		"transparentTitle": "none",
-		"titlePenetrate": "NO",
-		"pageOrientation": "portrait",
-		"animationType": "pop-in",
-		"animationDuration": "300",
 		"app-plus": {
 			"scrollIndicator": "none"
 		},
@@ -243,18 +238,11 @@
 		"backgroundColor": "#F8F8F8",
 		"selectedColor": "#FFE454",
 		"borderStyle": "white",
-		"list": [
-			{
+		"list": [{
 				"pagePath": "pages/tabBar-home/index",
 				"text": "首页",
 				"iconPath": "static/icon/Hat.png",
 				"selectedIconPath": "static/icon/Hat_act.png"
-			},
-			{
-				"pagePath": "pages/tabBar-classify/index",
-				"text": "分类",
-				"iconPath": "static/icon/Shirt.png",
-				"selectedIconPath": "static/icon/Shirt_act.png"
 			},
 			{
 				"pagePath": "pages/tabBar-dynamic/index",

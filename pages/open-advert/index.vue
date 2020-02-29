@@ -13,8 +13,8 @@
 export default {
   data() {
     return {
-      bgPng: 'https://kujomiva-1259361798.cos.ap-chengdu.myqcloud.com/default/b0b06a7fbc0196b2c316fe4869fcb6db.jpg',
-      logPng: 'https://kujomiva-1259361798.cos.ap-chengdu.myqcloud.com/default/eab618c06709b4a04a5a276b612383a8.png',
+      bgPng: '/static/download_2.png',
+      logPng: '/static/favicon.ico',
       timeNum: 5,
       timer: null
     }

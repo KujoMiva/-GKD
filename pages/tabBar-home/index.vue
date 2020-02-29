@@ -6,12 +6,15 @@
     <view v-show="pageShow" class="animation-body">
       <itemSwiper />
       <view class="container-layer-body">
-        <itemTitile label="视频推荐">
-          <itemList lib-router="视频作品详情" />
+        <itemTitile label="合辑推荐">
+          <itemList lib-router="合辑作品详情" />
         </itemTitile>
-        <itemTitile label="分享推荐">
-          <itemList lib-router="网盘分享详情" />
-        </itemTitile>
+        <!-- <itemTitile label="视频推荐"> -->
+        <!-- <itemList lib-router="视频作品详情" /> -->
+        <!-- </itemTitile> -->
+        <!-- <itemTitile label="分享推荐"> -->
+        <!-- <itemList lib-router="网盘分享详情" /> -->
+        <!-- </itemTitile> -->
         <itemTitile label="随便看看">
           <view v-if="listShow">
             <view v-if="listData.length>0">
